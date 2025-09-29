@@ -83,7 +83,7 @@ export const quizModel = {
             return db.insert(quizs).values(quiz)
         } catch(err: any) {
             console.error(`Error during the insert of the Quiz: ${err.message}`);
-            throw new Error("The Quiz couldn't be added");
+            throw new Error("The Quiz couldn't be created");
         }
     },
 
