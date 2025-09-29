@@ -9,20 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const pg_1 = require("pg");
-const migrator_1 = require("drizzle-orm/node-postgres/migrator");
-const node_postgres_1 = require("drizzle-orm/node-postgres");
+const migrator_1 = require("drizzle-orm/neon-http/migrator");
+const neon_http_1 = require("drizzle-orm/neon-http");
 const env_1 = require("./env");
+const serverless_1 = require("@neondatabase/serverless");
 function migration() {
     return __awaiter(this, void 0, void 0, function* () {
-        const pool = new pg_1.Pool({
-            connectionString: env_1.env.DATABASE_URL
-        });
-        const db = (0, node_postgres_1.drizzle)(pool);
+        const sql = (0, serverless_1.neon)(env_1.env.DATABASE_URL);
+        const db = (0, neon_http_1.drizzle)({ client: sql });
         console.log("Migration...");
         yield (0, migrator_1.migrate)(db, { migrationsFolder: "src/migrations" });
         console.log("Migration done!");
-        yield pool.end();
     });
 }
 migration();

@@ -32,13 +32,16 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.db = exports.pool = void 0;
-const pg_1 = require("pg");
+exports.db = exports.sql = void 0;
 const env_1 = require("./env");
-const node_postgres_1 = require("drizzle-orm/node-postgres");
+const neon_http_1 = require("drizzle-orm/neon-http");
 const schema = __importStar(require("../schemas"));
-exports.pool = new pg_1.Pool({
-    connectionString: env_1.env.DATABASE_URL
-});
-exports.db = (0, node_postgres_1.drizzle)(exports.pool, { schema });
+const serverless_1 = require("@neondatabase/serverless");
+const ws_1 = __importDefault(require("ws"));
+serverless_1.neonConfig.webSocketConstructor = ws_1.default;
+exports.sql = (0, serverless_1.neon)(env_1.env.DATABASE_URL);
+exports.db = (0, neon_http_1.drizzle)({ client: exports.sql, schema });
