@@ -12,13 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.updateUser = exports.getUser = exports.getAllUser = void 0;
+exports.deleteUser = exports.updateUser = exports.getUser = exports.getAllUsers = void 0;
 const apiResponse_1 = require("../utils/apiResponse");
 const models_1 = require("../models");
 const zod_1 = __importDefault(require("zod"));
 const argon2_1 = __importDefault(require("argon2"));
 const validations_1 = require("../validations");
-const getAllUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const usersDatas = yield models_1.userModel.getAll();
         return (0, apiResponse_1.apiResponse)(res, usersDatas, "Users fetched successfully");
@@ -27,7 +27,7 @@ const getAllUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         return (0, apiResponse_1.apiResponse)(res, null, "Error during the fetch of every Users", 500);
     }
 });
-exports.getAllUser = getAllUser;
+exports.getAllUsers = getAllUsers;
 const getUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { user } = res.locals;

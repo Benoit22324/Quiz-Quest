@@ -18,7 +18,8 @@ export const authLogin = async (req: Request, res: Response) => {
         if (!passVerification) return apiResponse(res, null, "Invalids credentials", 400);
 
         const accessToken = jwt.sign({
-            id: user.id
+            id: user.id,
+            email: user.email
         },
         env.JWT_SECRET, {
             expiresIn: "2h"
@@ -29,6 +30,8 @@ export const authLogin = async (req: Request, res: Response) => {
             sameSite: "strict",
             secure: true
         })
+
+        return apiResponse(res, null, "You're now logged in");
     } catch(err: any) {
         if (err instanceof z.ZodError) return apiResponse(res, err.message, "Invalid Form", 400);
 
@@ -61,7 +64,7 @@ export const authRegister = async (req: Request, res: Response) => {
     }
 }
 
-export const authLogout = async (req: Response, res: Response) => {
+export const authLogout = async (req: Request, res: Response) => {
     try {
         res.clearCookie("accessToken");
 

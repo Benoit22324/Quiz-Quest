@@ -18,3 +18,6 @@ __exportStar(require("./quizValidators"), exports);
 __exportStar(require("./authValidators"), exports);
 __exportStar(require("./userValidators"), exports);
 __exportStar(require("./partValidators"), exports);
+__exportStar(require("./noteValidators"), exports);
+__exportStar(require("./commentValidators"), exports);
+__exportStar(require("./runValidators"), exports);

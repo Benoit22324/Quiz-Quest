@@ -5,7 +5,7 @@ import z from "zod";
 import argon2 from "argon2";
 import { userCreationValidation } from "../validations";
 
-export const getAllUser = async (req: Request, res: Response) => {
+export const getAllUsers = async (req: Request, res: Response) => {
     try {
         const usersDatas = await userModel.getAll();
 

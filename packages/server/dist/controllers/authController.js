@@ -30,7 +30,8 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (!passVerification)
             return (0, apiResponse_1.apiResponse)(res, null, "Invalids credentials", 400);
         const accessToken = jsonwebtoken_1.default.sign({
-            id: user.id
+            id: user.id,
+            email: user.email
         }, env_1.env.JWT_SECRET, {
             expiresIn: "2h"
         });
@@ -39,6 +40,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             sameSite: "strict",
             secure: true
         });
+        return (0, apiResponse_1.apiResponse)(res, null, "You're now logged in");
     }
     catch (err) {
         if (err instanceof zod_1.default.ZodError)

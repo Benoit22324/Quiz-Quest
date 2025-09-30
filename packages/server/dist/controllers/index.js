@@ -18,3 +18,6 @@ __exportStar(require("./quizController"), exports);
 __exportStar(require("./authController"), exports);
 __exportStar(require("./userController"), exports);
 __exportStar(require("./partController"), exports);
+__exportStar(require("./noteController"), exports);
+__exportStar(require("./commentController"), exports);
+__exportStar(require("./runController"), exports);
