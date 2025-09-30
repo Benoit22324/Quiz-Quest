@@ -8,6 +8,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.env = {
     PORT: parseInt(process.env.PORT || "3000"),
+    JWT_SECRET: process.env.JWT_SECRET || "",
     DATABASE_URL: process.env.DATABASE_URL || "",
     PROJECT_ID: process.env.STACK_PROJECT_ID || "",
     PUBLISHABLE_CLIENT_KEY: process.env.STACK_PUBLISHABLE_CLIENT_KEY || "",

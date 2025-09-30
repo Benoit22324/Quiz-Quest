@@ -30,7 +30,7 @@ export const partModel = {
                 columns: {
                     id: true,
                     question: true,
-                    answer: true,
+                    answers: true,
                     correctAnswer: true
                 }
             })
