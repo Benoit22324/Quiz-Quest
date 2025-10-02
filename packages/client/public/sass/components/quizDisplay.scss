@@ -1,0 +1,13 @@
+.quiz_display_component {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    height: 59vh;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.quiz_display_error {
+    font-size: 20px;
+}

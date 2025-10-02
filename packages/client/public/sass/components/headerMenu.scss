@@ -1,0 +1,47 @@
+.header_menu_component {
+    @include flexCenter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 40%);
+    backdrop-filter: blur(4px);
+    z-index: 20;
+}
+
+.header_menu_close_btn {
+    $size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: $size;
+    height: $size;
+}
+
+.nav_bar_container {
+    width: 60%;
+}
+
+.nav_bar {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.nav_link {
+    padding: 1em 0;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-top: 1px solid white;
+}
+
+.nav_link_current {
+    text-decoration: underline;
+}
+
+.nav_link:first-child {
+    border: none;
+}

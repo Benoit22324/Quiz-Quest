@@ -40,7 +40,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             sameSite: "strict",
             secure: true
         });
-        return (0, apiResponse_1.apiResponse)(res, null, "You're now logged in");
+        return (0, apiResponse_1.apiResponse)(res, user.id, "You're now logged in");
     }
     catch (err) {
         if (err instanceof zod_1.default.ZodError)

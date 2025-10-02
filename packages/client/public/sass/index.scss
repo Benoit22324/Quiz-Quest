@@ -1,0 +1,52 @@
+// Variables
+$lighter-orange: #FFB56C;
+
+$light-green: #26E400;
+$light-blue: #00ACF6;
+$light-gray: #D5D5D5;
+$light-orange: #FFA600;
+$light-yellow: #FFF700;
+
+$dark-red: #DE2626;
+$dark-gray: #c4c4c4;
+
+$darker-gray: #727272;
+
+// Font Import
+@import "./fonts";
+
+// Mixin
+@mixin transition {
+    transition: all;
+    transition-duration: 0.2s;
+}
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Common css
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    @include fontGaramond;
+}
+
+body {
+    height: 100vh;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.deco_none {
+    text-decoration: none;
+}
+
+// Imports
+@import "./pages";
+@import "./components/";

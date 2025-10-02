@@ -10,7 +10,8 @@ export const userModel = {
                 columns: {
                     id: true,
                     username: true,
-                    createdAt: true
+                    createdAt: true,
+                    admin: true
                 }
             })
         } catch(err: any) {
@@ -26,6 +27,8 @@ export const userModel = {
                 columns: {
                     id: true,
                     username: true,
+                    email: true,
+                    admin: true,
                     createdAt: true
                 },
                 with: {

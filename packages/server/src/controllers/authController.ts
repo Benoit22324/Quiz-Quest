@@ -31,7 +31,7 @@ export const authLogin = async (req: Request, res: Response) => {
             secure: true
         })
 
-        return apiResponse(res, null, "You're now logged in");
+        return apiResponse(res, user.id, "You're now logged in");
     } catch(err: any) {
         if (err instanceof z.ZodError) return apiResponse(res, err.message, "Invalid Form", 400);
 

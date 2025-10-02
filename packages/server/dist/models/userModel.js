@@ -11,7 +11,8 @@ exports.userModel = {
                 columns: {
                     id: true,
                     username: true,
-                    createdAt: true
+                    createdAt: true,
+                    admin: true
                 }
             });
         }
@@ -27,6 +28,8 @@ exports.userModel = {
                 columns: {
                     id: true,
                     username: true,
+                    email: true,
+                    admin: true,
                     createdAt: true
                 },
                 with: {

@@ -10,7 +10,8 @@ export const quizModel = {
                 columns: {
                     id: true,
                     title: true,
-                    difficulty: true
+                    difficulty: true,
+                    createdAt: true
                 },
                 with: {
                     user: {
