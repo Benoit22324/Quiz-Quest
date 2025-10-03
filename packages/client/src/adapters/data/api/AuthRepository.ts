@@ -32,6 +32,26 @@ class AuthRepository implements AuthRepositoryInterface {
         }
     }
 
+    async register(username: string, email: string, password: string): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.post(`${apiUrl}/register`, {
+                username,
+                email,
+                password
+            }, {
+                withCredentials: true
+            });
+
+            return {
+                data: null,
+                message: response.data.message,
+                success: true
+            }
+        } catch(err: any) {
+            return repositoryError(err.response.data.message)
+        }
+    }
+
     async logout(): Promise<void> {
         try {
             await axios.get(`${apiUrl}/logout`, {

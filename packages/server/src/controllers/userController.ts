@@ -18,8 +18,9 @@ export const getAllUsers = async (req: Request, res: Response) => {
 export const getUser = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
+        const { user } = res.locals;
 
-        const userData = await userModel.get(id);
+        const userData = await userModel.get(id || user.id);
         if (!userData) return apiResponse(res, null, "User not found", 404);
 
         return apiResponse(res, userData, "User fetched successfully");

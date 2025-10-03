@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, type PropsWithChildren } from "react";
+import React, { createContext, useContext, useEffect, useState, type PropsWithChildren } from "react";
 import type { AuthContextType } from "../../../typings/AuthContextType";
 import type User from "../../../domain/entities/User";
 import AuthRepository from "../../data/api/AuthRepository";
@@ -7,6 +7,8 @@ import type { LoginInput } from "../../../interfaces/inputs/LoginInput";
 import UserRepository from "../../data/api/UserRepository";
 import GetUserUseCase from "../../../domain/usecases/GetUserUseCase";
 import LogoutUseCase from "../../../domain/usecases/LogoutUseCase";
+import type { RegisterInput } from "../../../interfaces/inputs/RegisterInput";
+import RegisterUseCase from "../../../domain/usecases/RegisterUseCase";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -14,12 +16,13 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     const authRepository = new AuthRepository();
     const userRepository = new UserRepository();
     const loginUseCase = new LoginUseCase(authRepository);
+    const registerUseCase = new RegisterUseCase(authRepository);
     const logoutUseCase = new LogoutUseCase(authRepository);
     const getUserUseCase = new GetUserUseCase(userRepository);
 
     const [user, setUser] = useState<User | null>(null);
 
-    const login = async (input: LoginInput): Promise<void> => {
+    const login = async (input: LoginInput): Promise<boolean> => {
         try {
             const response = await loginUseCase.execute(input);
 
@@ -27,9 +30,23 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
                 const userData = await getUserUseCase.execute({ id: response });
 
                 setUser(userData);
+
+                return true
             }
+
+            return false
         } catch(err: any) {
             throw new Error("Error during the login");
+        }
+    }
+
+    const register = async (input: RegisterInput): Promise<string | boolean> => {
+        try {
+            const response = await registerUseCase.execute(input);
+
+            return response
+        } catch(err: any) {
+            return false
         }
     }
 
@@ -43,9 +60,20 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
         }
     }
 
+    useEffect(() => {
+        const autoReLog = async () => {
+            const userData = await getUserUseCase.execute({ id: null });
+
+            if (userData) setUser(userData);
+        }
+
+        autoReLog()
+    }, [])
+
     const authContextValue: AuthContextType = {
         user,
         login,
+        register,
         logout
     }
 

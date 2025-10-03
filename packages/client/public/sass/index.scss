@@ -1,5 +1,6 @@
 // Variables
 $lighter-orange: #FFB56C;
+$lighter-green: #3afa13;
 
 $light-green: #26E400;
 $light-blue: #00ACF6;
@@ -37,6 +38,20 @@ $darker-gray: #727272;
 
 body {
     height: 100vh;
+}
+
+input {
+    width: 100%;
+    padding: 0.4em 0.8em;
+    color: $light-gray;
+    background-color: $darker-gray;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+input::placeholder {
+    color: $light-gray;
 }
 
 .bold {

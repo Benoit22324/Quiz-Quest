@@ -23,18 +23,21 @@ export const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
                     <Link to="/" className={`nav_link${underlineCurrent("/")}`} onClick={onClose}>
                         <li>Home</li>
                     </Link>
-                    <Link to="/quiz" className={`nav_link${underlineCurrent("/quiz")}`} onClick={onClose}>
-                        <li>Quiz</li>
+                    <Link to="/quizs" className={`nav_link${underlineCurrent("/quizs")}`} onClick={onClose}>
+                        <li>Quiz List</li>
                     </Link>
                     {
                         user ? <>
-                            <Link to="/create" className="nav_link" onClick={logout}>
+                            <Link to="/create" className={`nav_link${underlineCurrent("/create")}`} onClick={onClose}>
                                 <li>Create Quiz</li>
                             </Link>
-                            <Link to="/profile" className="nav_link" onClick={logout}>
+                            <Link to="/profile" className={`nav_link${underlineCurrent("/profile")}`} onClick={onClose}>
                                 <li>Profile</li>
                             </Link>
-                            <Link to="/" className="nav_link" onClick={logout}>
+                            <Link to="/" className="nav_link" onClick={() => {
+                                    logout()
+                                    onClose()
+                                }}>
                                 <li>Logout</li>
                             </Link>
                         </>
@@ -42,7 +45,7 @@ export const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
                             <Link to="/login" className={`nav_link${underlineCurrent("/login")}`} onClick={onClose}>
                                 <li>Login</li>
                             </Link>
-                            <Link to="/" className={`nav_link${underlineCurrent("/register")}`} onClick={onClose}>
+                            <Link to="/register" className={`nav_link${underlineCurrent("/register")}`} onClick={onClose}>
                                 <li>Register</li>
                             </Link>
                         </>

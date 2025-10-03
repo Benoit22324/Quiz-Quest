@@ -5,9 +5,12 @@
     width: 80%;
     height: 59vh;
     margin: 0 auto;
+    padding: 0 0.8em 0.4em;
     overflow: auto;
 }
 
 .quiz_display_error {
     font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }

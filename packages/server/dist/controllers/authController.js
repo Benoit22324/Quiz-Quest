@@ -51,7 +51,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.authLogin = authLogin;
 const authRegister = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password } = validations_1.authRegisterValidation.parse(req.body);
         const exist = yield models_1.userModel.findCredentials(email);
         if (exist)
             return (0, apiResponse_1.apiResponse)(res, null, "Email already used", 400);

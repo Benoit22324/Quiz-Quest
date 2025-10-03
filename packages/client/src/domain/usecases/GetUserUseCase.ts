@@ -27,7 +27,7 @@ class GetUserUseCase {
 
             return null
         } catch(err: any) {
-            throw new Error("Error during the fetch of the User");
+            return null
         }
     }
 }

@@ -2,10 +2,11 @@
     @include flexCenter;
     flex-direction: column;
     gap: 4px;
-    width: 98%;
     padding: 0.4em 0.6em;
     color: black;
     background-color: $light-gray;
+    font-size: 20px;
+    text-align: center;
     border-radius: 6px;
     box-shadow: 3px 3px 4px $dark-gray;
 }
@@ -15,7 +16,7 @@
 }
 
 .quiz_view_star {
-    $size: 20px;
+    $size: 28px;
     color: $light-yellow;
     width: $size;
     height: $size;

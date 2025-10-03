@@ -4,7 +4,7 @@ import z from "zod";
 import jwt from "jsonwebtoken";
 import { apiResponse } from "../utils/apiResponse";
 import { userModel } from "../models";
-import { authLoginValidation } from "../validations";
+import { authLoginValidation, authRegisterValidation } from "../validations";
 import { env } from "../config/env";
 
 export const authLogin = async (req: Request, res: Response) => {
@@ -41,7 +41,7 @@ export const authLogin = async (req: Request, res: Response) => {
 
 export const authRegister = async (req: Request, res: Response) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password } = authRegisterValidation.parse(req.body);
 
         const exist = await userModel.findCredentials(email);
         if (exist) return apiResponse(res, null, "Email already used", 400);

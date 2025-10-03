@@ -31,7 +31,8 @@ exports.getAllUsers = getAllUsers;
 const getUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
-        const userData = yield models_1.userModel.get(id);
+        const { user } = res.locals;
+        const userData = yield models_1.userModel.get(id || user.id);
         if (!userData)
             return (0, apiResponse_1.apiResponse)(res, null, "User not found", 404);
         return (0, apiResponse_1.apiResponse)(res, userData, "User fetched successfully");
