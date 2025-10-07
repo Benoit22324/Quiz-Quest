@@ -46,7 +46,7 @@ export const QuizListPage = () => {
             <h2 className="quiz_list_title">Quiz List</h2>
 
             <section className="search_bar_section">
-                <input className="search_bar" type="text" placeholder="Quiz Title" value={searchValue} onChange={handleSearchBarChange} />
+                <input id="search_bar" className="search_bar" type="text" placeholder="Quiz Title" value={searchValue} onChange={handleSearchBarChange} />
                 <FaSearch className="search_button" onClick={handleSearchQuizList} />
             </section>
 

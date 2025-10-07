@@ -1,17 +1,23 @@
 // Variables
 $lighter-orange: #FFB56C;
 $lighter-green: #3afa13;
+$lighter-blue: #34c2ff;
+$lighter-red: #ff2323;
 
 $light-green: #26E400;
 $light-blue: #00ACF6;
 $light-gray: #D5D5D5;
 $light-orange: #FFA600;
 $light-yellow: #FFF700;
+$light-red: #f50000;
 
 $dark-red: #DE2626;
+$dark-green: #1fb800;
 $dark-gray: #c4c4c4;
 
 $darker-gray: #727272;
+
+$content-height: 87.5vh;
 
 // Font Import
 @import "./fonts";
@@ -21,10 +27,32 @@ $darker-gray: #727272;
     transition: all;
     transition-duration: 0.2s;
 }
+@mixin animateScale {
+    transform: scale(1.005);
+}
 @mixin flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@mixin btnStyle {
+    width: fit-content;
+    margin-top: 0.8em;
+    padding: 0.2em 0.6em;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    @include transition;
+}
+@mixin modal {
+    @include flexCenter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 30;
 }
 
 // Common css
@@ -40,7 +68,8 @@ body {
     height: 100vh;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     padding: 0.4em 0.8em;
     color: $light-gray;
@@ -63,5 +92,6 @@ input::placeholder {
 }
 
 // Imports
+@import "./utils/";
 @import "./pages";
 @import "./components/";

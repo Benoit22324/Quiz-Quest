@@ -29,11 +29,13 @@
     background-color: $light-gray;
     border-radius: 8px;
     box-shadow: 3px 3px 4px $dark-gray;
-    cursor: pointer;
+    @include transition;
 }
 
 .search_button:hover {
+    @include animateScale;
     background-color: $dark-gray;
+    cursor: pointer;
 }
 
 // Quiz Section

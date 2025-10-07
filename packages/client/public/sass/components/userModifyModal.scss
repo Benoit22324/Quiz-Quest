@@ -1,0 +1,75 @@
+.user_modify_modal_component {
+    @include modal;
+}
+
+.user_modify_modal {
+    width: 80%;
+    padding: 1.6em 0.8em;
+    background-color: $light-gray;
+    border-radius: 8px;
+}
+
+.user_modify_title {
+    margin-bottom: 0.7em;
+    font-size: 24px;
+    text-align: center;
+}
+
+.user_modify_form {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user_modify_input_container {
+    @include flexCenter;
+    position: relative;
+    gap: 5px;
+}
+
+.user_modify_label {
+    width: 25%;
+    font-weight: 500;
+}
+
+.user_modify_input {
+    width: 70%;
+}
+
+.user_modify_show_btn {
+    $size: 20px;
+    position: absolute;
+    right: 12px;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+}
+
+.user_modify_btn_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.user_modify_cancel_btn {
+    @include btnStyle;
+    background-color: $dark-gray;
+    box-shadow: 1px 1px 2px $darker-gray;
+}
+
+.user_modify_cancel_btn:hover {
+    @include animateScale;
+    background-color: $darker-gray;
+    cursor: pointer;
+}
+
+.user_modify_confirm_btn {
+    @include btnStyle;
+    background-color: $light-green;
+    box-shadow: 1px 1px 2px $lighter-green;
+}
+
+.user_modify_confirm_btn:hover {
+    @include animateScale;
+    background-color: $lighter-green;
+    cursor: pointer;
+}

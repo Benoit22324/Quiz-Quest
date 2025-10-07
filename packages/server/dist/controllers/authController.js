@@ -33,7 +33,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             id: user.id,
             email: user.email
         }, env_1.env.JWT_SECRET, {
-            expiresIn: "2h"
+            expiresIn: "5h"
         });
         res.cookie("accessToken", accessToken, {
             httpOnly: true,

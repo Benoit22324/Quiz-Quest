@@ -19,7 +19,7 @@ class GetUserUseCase {
                     responseData.username,
                     responseData.email,
                     responseData.admin,
-                    new Date(responseData.createdAt)
+                    responseData.createdAt
                 )
 
                 return userData

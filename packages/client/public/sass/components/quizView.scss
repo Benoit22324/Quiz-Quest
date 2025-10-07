@@ -9,15 +9,18 @@
     text-align: center;
     border-radius: 6px;
     box-shadow: 3px 3px 4px $dark-gray;
+    @include transition;
+}
+
+.quiz_view_component:hover {
+    @include animateScale;
+    background-color: $dark-gray;
 }
 
 .quiz_view_star_container {
     @include flexCenter;
 }
 
-.quiz_view_star {
-    $size: 28px;
-    color: $light-yellow;
-    width: $size;
-    height: $size;
+.quiz_view_author {
+    font-size: 16px;
 }

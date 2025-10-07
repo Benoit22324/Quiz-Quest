@@ -32,13 +32,13 @@ export const addQuiz = async (req: Request, res: Response) => {
         const { title, difficulty } = quizCreationValidation.parse(req.body);
         const { user } = res.locals;
 
-        await quizModel.create({
+        const [quiz] = await quizModel.create({
             title,
             difficulty,
             authorId: user.id
         })
 
-        return apiResponse(res, null, "Quiz was successfully created", 201);
+        return apiResponse(res, quiz, "Quiz was successfully created", 201);
     } catch(err: any) {
         if (err instanceof z.ZodError) return apiResponse(res, err.message, "Invalid Form", 400);
 

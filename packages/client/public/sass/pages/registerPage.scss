@@ -2,7 +2,7 @@
     @include flexCenter;
     flex-direction: column;
     gap: 20px;
-    height: 87.5vh;
+    height: $content-height;
 }
 
 .register_title {
@@ -44,17 +44,13 @@
 }
 
 .register_submit_btn {
-    width: fit-content;
-    margin-top: 0.8em;
-    padding: 0.2em 0.6em;
+    @include btnStyle;
     background-color: $light-orange;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
     box-shadow: 1px 1px 2px $lighter-orange;
 }
 
 .register_submit_btn:hover {
+    @include animateScale;
     background-color: $lighter-orange;
+    cursor: pointer;
 }

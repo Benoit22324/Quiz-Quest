@@ -11,6 +11,7 @@ export const partModel = {
                 columns: {
                     id: true,
                     question: true,
+                    correctAnswer: true,
                     quizIndex: true
                 }
             })
@@ -31,7 +32,8 @@ export const partModel = {
                     id: true,
                     question: true,
                     answers: true,
-                    correctAnswer: true
+                    correctAnswer: true,
+                    quizIndex: true
                 }
             })
         } catch(err: any) {

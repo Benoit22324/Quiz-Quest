@@ -55,7 +55,8 @@ exports.quizModel = {
                     comments: {
                         columns: {
                             id: true,
-                            content: true
+                            content: true,
+                            createdAt: true
                         },
                         with: {
                             user: {
@@ -82,7 +83,9 @@ exports.quizModel = {
     },
     create: (quiz) => {
         try {
-            return pool_1.db.insert(schemas_1.quizs).values(quiz);
+            return pool_1.db.insert(schemas_1.quizs).values(quiz).returning({
+                id: schemas_1.quizs.id
+            });
         }
         catch (err) {
             console.error(`Error during the insert of the Quiz: ${err.message}`);

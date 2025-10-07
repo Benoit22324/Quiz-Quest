@@ -1,0 +1,45 @@
+.delete_confirmation_modal_component {
+    @include modal;
+}
+
+.delete_confirmation_modal {
+    width: 80%;
+    padding: 1.6em 0.8em;
+    background-color: $light-gray;
+    border-radius: 8px;
+}
+
+.delete_confirmation_text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.delete_confirmation_btn_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete_confirmation_cancel_btn {
+    @include btnStyle;
+    background-color: $dark-gray;
+    box-shadow: 1px 1px 2px $darker-gray;
+}
+
+.delete_confirmation_cancel_btn:hover {
+    @include animateScale;
+    background-color: $darker-gray;
+    cursor: pointer;
+}
+
+.delete_confirmation_delete_btn {
+    @include btnStyle;
+    background-color: $light-red;
+    box-shadow: 1px 1px 2px $lighter-red;
+}
+
+.delete_confirmation_delete_btn:hover {
+    @include animateScale;
+    background-color: $lighter-red;
+    cursor: pointer;
+}

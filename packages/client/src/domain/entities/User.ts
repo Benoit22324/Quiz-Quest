@@ -12,7 +12,7 @@ class User {
         private username: string,
         private email: string,
         private admin: boolean,
-        private createdAt: Date
+        private createdAt: string
     ) { }
 
     getId() {

@@ -4,7 +4,7 @@ export type PartialComment = {
     id?: string,
     content?: string,
     user?: PartialUser,
-    createdAt?: Date
+    createdAt?: string
 }
 
 class Comment {
@@ -12,7 +12,7 @@ class Comment {
         private id: string,
         private content: string,
         private user: PartialUser,
-        private createdAt: Date
+        private createdAt: string
     ) { }
 
     getId() {

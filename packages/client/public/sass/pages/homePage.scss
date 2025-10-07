@@ -19,14 +19,16 @@
 }
 
 .introduction_section_register_btn {
-    padding: 0.2em 0.4em;
+    padding: 0.2em 0.6em;
     color: black;
     background-color: $light-orange;
     text-decoration: none;
     border-radius: 6px;
+    @include transition;
 }
 
 .introduction_section_register_btn:hover {
+    @include animateScale;
     background-color: $lighter-orange;
 }
 

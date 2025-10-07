@@ -54,7 +54,8 @@ export const quizModel = {
                     comments: {
                         columns: {
                             id: true,
-                            content: true
+                            content: true,
+                            createdAt: true
                         },
                         with: {
                             user: {
@@ -81,7 +82,9 @@ export const quizModel = {
 
     create: (quiz: NewQuiz) => {
         try {
-            return db.insert(quizs).values(quiz)
+            return db.insert(quizs).values(quiz).returning({
+                id: quizs.id
+            })
         } catch(err: any) {
             console.error(`Error during the insert of the Quiz: ${err.message}`);
             throw new Error("The Quiz couldn't be created");

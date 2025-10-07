@@ -5,6 +5,10 @@ import { QuizListPage } from "../pages/QuizListPage"
 import { useAuth } from "../context/AuthContext"
 import { LoginPage } from "../pages/LoginPage"
 import { RegisterPage } from "../pages/RegisterPage"
+import { QuizPage } from "../pages/QuizPage"
+import { PartPage } from "../pages/PartPage"
+import { ProfilePage } from "../pages/ProfilePage"
+import { QuizCreationPage } from "../pages/QuizCreationPage"
 
 export const MainRoutes = () => {
     const { user } = useAuth();
@@ -14,10 +18,13 @@ export const MainRoutes = () => {
             <Route element={<GlobalLayout />}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/quizs" element={<QuizListPage />} />
+                <Route path="/quiz/:id" element={<QuizPage />} />
+                <Route path="/part/:quizId" element={<PartPage />} />
 
                 {
                     user ? <>
-                        <Route path="/profile" element={<HomePage />} />
+                        <Route path="/create" element={<QuizCreationPage />} />
+                        <Route path="/profile" element={<ProfilePage />} />
                     </>
                     : <>
                         <Route path="/login" element={<LoginPage />} />

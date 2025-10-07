@@ -27,6 +27,50 @@ class UserRepository implements UserRepositoryInterface {
             throw new Error("Error during the fetch of the User");
         }
     }
+
+    async updateUser(username: string, email: string, password: string): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.put(`${apiUrl}/user`, {
+                username,
+                email,
+                password
+            }, {
+                withCredentials: true
+            })
+
+            if (response.status === 201) {
+                return {
+                    data: null,
+                    message: response.data.message,
+                    success: true
+                }
+            }
+
+            return {
+                data: null,
+                message: "User not found",
+                success: true
+            }
+        } catch(err: any) {
+            throw new Error("Error during the update of the User");
+        }
+    }
+
+    async deleteUser(): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.delete(`${apiUrl}/user`, {
+                withCredentials: true
+            })
+
+            return {
+                data: null,
+                message: response.data.message,
+                success: true
+            }
+        } catch(err: any) {
+            throw new Error("Error during the deletion of the User");
+        }
+    }
 }
 
 export default UserRepository;

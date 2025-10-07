@@ -1,0 +1,38 @@
+.part_page {
+    @include flexCenter;
+    flex-direction: column;
+    position: relative;
+    height: $content-height;
+    text-align: center;
+}
+
+// Quiz Part info section
+.part_quiz_info_section {
+    @include flexCenter;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.part_quiz_title {
+    font-size: 32px;
+}
+
+.part_quiz_author {
+    font-size: 20px;
+}
+
+.part_quiz_indexer {
+    $pos: 10px;
+    position: absolute;
+    top: $pos;
+    left: $pos;
+    width: fit-content;
+    font-size: 20px;
+}
+
+// Q&A Section
+.part_question_answser_section {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 8px;
+}

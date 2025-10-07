@@ -12,6 +12,7 @@ exports.partModel = {
                 columns: {
                     id: true,
                     question: true,
+                    correctAnswer: true,
                     quizIndex: true
                 }
             });
@@ -29,7 +30,8 @@ exports.partModel = {
                     id: true,
                     question: true,
                     answers: true,
-                    correctAnswer: true
+                    correctAnswer: true,
+                    quizIndex: true
                 }
             });
         }

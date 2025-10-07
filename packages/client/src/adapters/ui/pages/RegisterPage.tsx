@@ -58,7 +58,7 @@ export const RegisterPage = () => {
 
                     <Controller
                         control={control}
-                        rules={{ required: true }}
+                        rules={{ required: true, min: 1 }}
                         defaultValue={""}
                         name="username"
                         render={({ field }) => <input

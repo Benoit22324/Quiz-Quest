@@ -22,7 +22,7 @@ export const authLogin = async (req: Request, res: Response) => {
             email: user.email
         },
         env.JWT_SECRET, {
-            expiresIn: "2h"
+            expiresIn: "5h"
         });
 
         res.cookie("accessToken", accessToken, {

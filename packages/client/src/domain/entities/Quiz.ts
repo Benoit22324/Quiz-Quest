@@ -1,5 +1,6 @@
 import type { PartialComment } from "./Comment";
 import type { PartialNote } from "./Note";
+import type { PartialPart } from "./Part";
 import type { PartialUser } from "./User";
 
 export type PartialQuiz = {
@@ -7,9 +8,10 @@ export type PartialQuiz = {
     title?: string,
     difficulty?: string,
     user?: PartialUser,
-    createdAt?: Date,
-    notes?: PartialNote,
-    comments?: PartialComment
+    createdAt?: string,
+    notes?: PartialNote[],
+    comments?: PartialComment[],
+    parts?: PartialPart[]
 }
 
 class Quiz {
@@ -18,7 +20,7 @@ class Quiz {
         private title: string,
         private difficulty: string,
         private user: PartialUser,
-        private createdAt: Date,
+        private createdAt: string,
         private notes: PartialNote[],
         private comments: PartialComment[] | null
     ) { }
@@ -47,7 +49,7 @@ class Quiz {
         return this.notes;
     }
 
-    getComment() {
+    getComments() {
         return this.comments;
     }
 }

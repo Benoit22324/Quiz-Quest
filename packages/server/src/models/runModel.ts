@@ -32,6 +32,12 @@ export const runModel = {
                                     id: true,
                                     note: true
                                 }
+                            },
+                            parts: {
+                                columns: {
+                                    id: true,
+                                    question: true
+                                }
                             }
                         }
                     }

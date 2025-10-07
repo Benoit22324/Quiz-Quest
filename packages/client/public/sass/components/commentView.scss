@@ -1,0 +1,33 @@
+.comment_view_component {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0.6em 0.8em;
+    background-color: $light-gray;
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: 3px 3px 4px $dark-gray;
+}
+
+.comment_view_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment_view_info span {
+    width: fit-content;
+}
+
+.comment_view_user {
+    font-size: 24px;
+}
+
+.comment_view_time {
+    font-size: 18px;
+}
+
+.comment_view_content {
+    @extend .comment_view_time;
+    font-weight: 500;
+}

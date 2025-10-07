@@ -44,12 +44,12 @@ const addQuiz = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { title, difficulty } = validations_1.quizCreationValidation.parse(req.body);
         const { user } = res.locals;
-        yield models_1.quizModel.create({
+        const [quiz] = yield models_1.quizModel.create({
             title,
             difficulty,
             authorId: user.id
         });
-        return (0, apiResponse_1.apiResponse)(res, null, "Quiz was successfully created", 201);
+        return (0, apiResponse_1.apiResponse)(res, quiz, "Quiz was successfully created", 201);
     }
     catch (err) {
         if (err instanceof zod_1.default.ZodError)
