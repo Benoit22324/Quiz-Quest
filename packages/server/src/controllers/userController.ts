@@ -3,7 +3,7 @@ import { apiResponse } from "../utils/apiResponse";
 import { userModel } from "../models";
 import z from "zod";
 import argon2 from "argon2";
-import { userCreationValidation, userDeletionValidation } from "../validations";
+import { userCreationValidation } from "../validations";
 
 export const getAllUsers = async (req: Request, res: Response) => {
     try {
