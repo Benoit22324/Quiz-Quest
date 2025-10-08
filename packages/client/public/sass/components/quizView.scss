@@ -42,3 +42,9 @@
     color: $lighter-red;
     cursor: pointer;
 }
+
+@media (min-width: 1200px) {
+    .quiz_view_container {
+        width: 30%;
+    }
+}

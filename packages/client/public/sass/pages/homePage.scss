@@ -42,3 +42,10 @@
     margin-bottom: 10px;
     font-size: 28px;
 }
+
+@media (min-width: 1200px) {
+    .home_page {
+        width: 80%;
+        margin: auto;
+    }
+}

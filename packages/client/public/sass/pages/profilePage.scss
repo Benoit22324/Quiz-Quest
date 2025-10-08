@@ -64,3 +64,14 @@
 .profile_quiz_history_title {
     font-size: 28px;
 }
+
+@media (min-width: 1200px) {
+    .profile_page {
+        width: 40%;
+        margin: auto;
+    }
+
+    .profile_info_btn_container {
+        width: 60%;
+    }
+}

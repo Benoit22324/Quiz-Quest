@@ -13,3 +13,9 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+@media (min-width: 1200px) {
+    .admin_user_display_component {
+        width: 25%;
+    }
+}

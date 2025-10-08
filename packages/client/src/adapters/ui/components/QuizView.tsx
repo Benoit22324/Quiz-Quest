@@ -35,7 +35,7 @@ export const QuizView = ({ quiz, setDelete }: QuizViewProps) => {
         {
             deleteModalOpen && <DeleteConfirmationModal handleConfirm={handleDeleteQuiz} onClose={() => setDeleteModalOpen(false)} />
         }
-        <div className="relative">
+        <div className="quiz_view_container relative">
             <Link to={`/quiz/${quiz.getId()}`} className="deco_none">
                 <div className="quiz_view_component">
                     <div>

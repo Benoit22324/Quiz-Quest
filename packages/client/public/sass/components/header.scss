@@ -21,4 +21,17 @@
 .header_burger_menu:hover {
     background-color: $dark-gray;
     border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    .header_logo {
+        width: 120px;
+    }
+
+    .header_burger_menu {
+        $size: 30px;
+        width: $size;
+        height: $size;
+    }
 }

@@ -8,6 +8,7 @@
 
 .part_creation_input_container {
     @include flexCenter;
+    position: relative;
 }
 
 .part_creation_label {
@@ -24,6 +25,8 @@
     $size: 24px;
     width: $size;
     height: $size;
+    position: absolute;
+    right: -5px;
     cursor: pointer;
 }
 

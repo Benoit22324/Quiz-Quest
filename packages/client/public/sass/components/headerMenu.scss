@@ -8,6 +8,7 @@
     background-color: rgba(0, 0, 0, 50%);
     backdrop-filter: blur(6px);
     z-index: 20;
+    user-select: none;
 }
 
 .header_menu_close_btn {
@@ -65,4 +66,37 @@
     $top-radius: 10px;
     border-bottom-left-radius: $top-radius;
     border-bottom-right-radius: $top-radius;
+}
+
+@media (min-width: 1200px) {
+    .header_menu_component {
+        top: 60px;
+        left: auto;
+        right: 20px;
+        width: 20%;
+        height: fit-content;
+        background-color: $light-gray;
+        border: 2px solid $dark-gray;
+        border-radius: 10px;
+    }
+
+    .header_menu_close_btn {
+        display: none;
+    }
+
+    .nav_bar_container {
+        width: 100%;
+    }
+
+    .nav_link {
+        padding: 0.4em 0;
+        color: black;
+        font-weight: 500;
+        border-top: 2px solid $dark-gray;
+    }
+
+    .nav_link_current {
+        text-decoration: none;
+        background-color: $dark-gray;
+    }
 }

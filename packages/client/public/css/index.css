@@ -98,6 +98,12 @@ input::placeholder {
   font-size: 28px;
 }
 
+@media (min-width: 1200px) {
+  .home_page {
+    width: 80%;
+    margin: auto;
+  }
+}
 .quiz_list_page {
   display: flex;
   flex-direction: column;
@@ -147,6 +153,11 @@ input::placeholder {
   height: 70vh !important;
 }
 
+@media (min-width: 1200px) {
+  .search_bar {
+    width: 30%;
+  }
+}
 .login_page {
   display: flex;
   justify-content: center;
@@ -165,6 +176,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   gap: 4px;
   margin-top: 1.2em;
   padding: 0 1em;
@@ -215,6 +227,15 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .login_page {
+    width: 40%;
+    margin: auto;
+  }
+  .login_form_container {
+    width: 70%;
+  }
+}
 .register_page {
   display: flex;
   justify-content: center;
@@ -233,6 +254,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   gap: 4px;
   margin-top: 1.2em;
   padding: 0 1em;
@@ -283,6 +305,15 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .register_page {
+    width: 40%;
+    margin: auto;
+  }
+  .register_form_container {
+    width: 70%;
+  }
+}
 .quiz_page {
   display: flex;
   flex-direction: column;
@@ -387,6 +418,14 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .quiz_comment_section {
+    width: 40%;
+  }
+  .quiz_comment_form {
+    width: 60%;
+  }
+}
 .part_page {
   display: flex;
   justify-content: center;
@@ -516,6 +555,15 @@ input::placeholder {
   font-size: 28px;
 }
 
+@media (min-width: 1200px) {
+  .profile_page {
+    width: 40%;
+    margin: auto;
+  }
+  .profile_info_btn_container {
+    width: 60%;
+  }
+}
 .quiz_creation_page {
   display: flex;
   justify-content: center;
@@ -529,6 +577,12 @@ input::placeholder {
   text-align: center;
 }
 
+@media (min-width: 1200px) {
+  .quiz_creation_page {
+    width: 35%;
+    margin: auto;
+  }
+}
 .admin_page {
   display: flex;
   flex-direction: column;
@@ -565,8 +619,18 @@ input::placeholder {
 .header_burger_menu:hover {
   background-color: #c4c4c4;
   border-radius: 6px;
+  cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .header_logo {
+    width: 120px;
+  }
+  .header_burger_menu {
+    width: 30px;
+    height: 30px;
+  }
+}
 .header_menu_component {
   display: flex;
   justify-content: center;
@@ -579,6 +643,7 @@ input::placeholder {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px);
   z-index: 20;
+  user-select: none;
 }
 
 .header_menu_close_btn {
@@ -637,6 +702,34 @@ input::placeholder {
   border-bottom-right-radius: 10px;
 }
 
+@media (min-width: 1200px) {
+  .header_menu_component {
+    top: 60px;
+    left: auto;
+    right: 20px;
+    width: 20%;
+    height: fit-content;
+    background-color: #D5D5D5;
+    border: 2px solid #c4c4c4;
+    border-radius: 10px;
+  }
+  .header_menu_close_btn {
+    display: none;
+  }
+  .nav_bar_container {
+    width: 100%;
+  }
+  .nav_link {
+    padding: 0.4em 0;
+    color: black;
+    font-weight: 500;
+    border-top: 2px solid #c4c4c4;
+  }
+  .nav_link_current {
+    text-decoration: none;
+    background-color: #c4c4c4;
+  }
+}
 .footer_component {
   position: fixed;
   bottom: 0;
@@ -681,6 +774,18 @@ input::placeholder {
   color: rgb(22, 22, 177);
 }
 
+@media (min-width: 1200px) {
+  .footer_component {
+    padding: 0.8em;
+  }
+  .footer_copy, .footer_conditions {
+    font-size: 18px;
+  }
+  .footer_socials_icon {
+    width: 24px;
+    height: 24px;
+  }
+}
 .quiz_display_component {
   display: flex;
   flex-direction: column;
@@ -698,6 +803,13 @@ input::placeholder {
   text-align: center;
 }
 
+@media (min-width: 1200px) {
+  .quiz_display_component {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
 .quiz_view_component {
   display: flex;
   justify-content: center;
@@ -747,6 +859,11 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .quiz_view_container {
+    width: 30%;
+  }
+}
 .alert_component {
   position: absolute;
   bottom: 50px;
@@ -829,7 +946,9 @@ input::placeholder {
 }
 
 .comment_view_delete_btn:hover {
+  transform: scale(1.1);
   color: #ff2323;
+  cursor: pointer;
 }
 
 .qa_display_question {
@@ -883,6 +1002,11 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .qa_display_btn_container {
+    width: 20%;
+  }
+}
 .answer_view_component {
   display: flex;
   justify-content: center;
@@ -910,6 +1034,11 @@ input::placeholder {
   box-shadow: 3px 3px 4px #34c2ff !important;
 }
 
+@media (min-width: 1200px) {
+  .answer_view_component {
+    width: 25%;
+  }
+}
 .part_result_note_container {
   display: flex;
   justify-content: center;
@@ -930,6 +1059,7 @@ input::placeholder {
 
 .part_result_star_container span {
   width: fit-content;
+  cursor: pointer;
 }
 
 .part_result_score {
@@ -1032,6 +1162,15 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .part_result_answer_display {
+    width: fit-content;
+    max-width: 40%;
+  }
+  .part_result_btn_container {
+    width: 20%;
+  }
+}
 .user_modify_modal_component {
   display: flex;
   justify-content: center;
@@ -1205,6 +1344,14 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 1200px) {
+  .delete_confirmation_modal {
+    width: 20%;
+  }
+  .delete_confirmation_text {
+    font-size: 24px;
+  }
+}
 .run_display_component {
   display: flex;
   flex-direction: column;
@@ -1322,6 +1469,7 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .part_creation_label {
@@ -1337,6 +1485,8 @@ input::placeholder {
 .part_creation_checkbox {
   width: 24px;
   height: 24px;
+  position: absolute;
+  right: -5px;
   cursor: pointer;
 }
 
@@ -1396,6 +1546,11 @@ input::placeholder {
   font-weight: 500;
 }
 
+@media (min-width: 1200px) {
+  .admin_user_display_component {
+    width: 25%;
+  }
+}
 .admin_user_view_component {
   display: flex;
   justify-content: center;

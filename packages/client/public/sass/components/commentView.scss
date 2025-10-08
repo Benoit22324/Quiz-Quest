@@ -48,5 +48,7 @@
 }
 
 .comment_view_delete_btn:hover {
+    transform: scale(1.1);
     color: $lighter-red;
+    cursor: pointer;
 }

@@ -46,3 +46,9 @@
 .quiz_display_height {
     height: 70vh!important;
 }
+
+@media (min-width: 1200px) {
+    .search_bar {
+        width: 30%;
+    }
+}

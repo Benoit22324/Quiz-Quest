@@ -15,7 +15,7 @@ export const Header = () => {
                 </Link>
             </div>
 
-            <LuMenu className="header_burger_menu" onClick={() => setIsOpen(true)} />
+            <LuMenu className="header_burger_menu" onClick={() => setIsOpen(!isOpen)} />
 
             {
                 isOpen && <HeaderMenu
