@@ -8,3 +8,10 @@
     font-size: 32px;
     text-align: center;
 }
+
+@media (min-width: 1200px) {
+    .quiz_creation_page {
+        width: 35%;
+        margin: auto;
+    }
+}

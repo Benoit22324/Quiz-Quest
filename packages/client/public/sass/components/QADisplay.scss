@@ -32,3 +32,9 @@
     background-color: $lighter-green;
     cursor: pointer;
 }
+
+@media (min-width: 1200px) {
+    .qa_display_btn_container {
+        width: 20%;
+    }
+}

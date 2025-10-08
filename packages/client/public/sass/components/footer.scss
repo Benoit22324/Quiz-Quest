@@ -41,3 +41,19 @@
 .footer_social_facebook {
     color: rgb(22, 22, 177);
 }
+
+@media (min-width: 1200px) {
+    .footer_component {
+        padding: 0.8em;
+    }
+
+    .footer_copy {
+        font-size: 18px;
+    }
+
+    .footer_socials_icon {
+        $size: 24px;
+        width: $size;
+        height: $size;
+    }
+}

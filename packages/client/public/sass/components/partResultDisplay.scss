@@ -14,6 +14,7 @@
 
 .part_result_star_container span {
     width: fit-content;
+    cursor: pointer;
 }
 
 .part_result_score {
@@ -91,4 +92,15 @@
     @include animateScale;
     background-color: $dark-gray;
     cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    .part_result_answer_display {
+        width: fit-content;
+        max-width: 40%;
+    }
+
+    .part_result_btn_container {
+        width: 20%;
+    }
 }
