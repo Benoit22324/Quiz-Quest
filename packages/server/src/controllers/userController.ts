@@ -3,7 +3,7 @@ import { apiResponse } from "../utils/apiResponse";
 import { userModel } from "../models";
 import z from "zod";
 import argon2 from "argon2";
-import { userCreationValidation } from "../validations";
+import { userCreationValidation, userDeletionValidation } from "../validations";
 
 export const getAllUsers = async (req: Request, res: Response) => {
     try {
@@ -53,9 +53,10 @@ export const updateUser = async (req: Request, res: Response) => {
 
 export const deleteUser = async (req: Request, res: Response) => {
     try {
+        const { id } = req.params;
         const { user } = res.locals;
 
-        await userModel.delete(user.id);
+        await userModel.delete(id || user.id);
 
         return apiResponse(res, null, "User was successfully deleted");
     } catch(err: any) {

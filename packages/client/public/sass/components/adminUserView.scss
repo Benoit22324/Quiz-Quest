@@ -1,6 +1,7 @@
-.quiz_view_component {
+.admin_user_view_component {
     @include flexCenter;
     flex-direction: column;
+    position: relative;
     gap: 4px;
     padding: 0.4em 0.6em;
     color: black;
@@ -9,23 +10,13 @@
     text-align: center;
     border-radius: 6px;
     box-shadow: 3px 3px 4px $dark-gray;
-    @include transition;
 }
 
-.quiz_view_component:hover {
-    @include animateScale;
-    background-color: $dark-gray;
+.admin_user_view_component p {
+    font-weight: 500;
 }
 
-.quiz_view_star_container {
-    @include flexCenter;
-}
-
-.quiz_view_author {
-    font-size: 16px;
-}
-
-.quiz_view_delete_btn {
+.admin_user_view_delete_btn {
     $pos: 8px;
     $size: 20px;
     position: absolute;
@@ -37,7 +28,7 @@
     @include transition;
 }
 
-.quiz_view_delete_btn:hover {
+.admin_user_view_delete_btn:hover {
     transform: scale(1.1);
     color: $lighter-red;
     cursor: pointer;

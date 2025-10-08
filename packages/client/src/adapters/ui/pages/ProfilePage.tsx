@@ -27,9 +27,9 @@ export const ProfilePage = () => {
     const handleDelete = async() => {
         try {
             if (user) {
-                await deleteUserUseCase.execute();
+                const response = await deleteUserUseCase.execute({ id: null });
 
-                logout();
+                if (response) logout();
             }
         } catch(err: any) {
             throw new Error("Error during the deletion of the User");

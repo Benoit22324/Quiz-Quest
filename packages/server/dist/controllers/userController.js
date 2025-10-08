@@ -65,8 +65,9 @@ const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.updateUser = updateUser;
 const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const { id } = req.params;
         const { user } = res.locals;
-        yield models_1.userModel.delete(user.id);
+        yield models_1.userModel.delete(id || user.id);
         return (0, apiResponse_1.apiResponse)(res, null, "User was successfully deleted");
     }
     catch (err) {

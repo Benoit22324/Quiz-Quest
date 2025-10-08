@@ -34,6 +34,11 @@ export const HeaderMenu = ({ onClose }: HeaderMenuProps) => {
                             <Link to="/profile" className={`nav_link${underlineCurrent("/profile")}`} onClick={onClose}>
                                 <li>Profile</li>
                             </Link>
+                            {
+                                user.getAdmin() && <Link to="/admin" className={`nav_link${underlineCurrent("/admin")}`} onClick={onClose}>
+                                    <li>Admin</li>
+                                </Link>
+                            }
                             <Link to="/" className="nav_link" onClick={() => {
                                     logout()
                                     onClose()

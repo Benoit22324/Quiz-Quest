@@ -529,6 +529,19 @@ input::placeholder {
   text-align: center;
 }
 
+.admin_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 87.5vh;
+  margin-top: 0.8em;
+  text-align: center;
+}
+
+.admin_page_title {
+  font-size: 32px;
+}
+
 .header_component {
   display: flex;
   justify-content: space-between;
@@ -729,7 +742,9 @@ input::placeholder {
 }
 
 .quiz_view_delete_btn:hover {
+  transform: scale(1.1);
   color: #ff2323;
+  cursor: pointer;
 }
 
 .alert_component {
@@ -1362,6 +1377,59 @@ input::placeholder {
 .part_creation_create_btn:hover {
   transform: scale(1.005);
   background-color: #3afa13;
+  cursor: pointer;
+}
+
+.admin_user_display_component {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 0 0.8em 0.4em;
+  overflow: auto;
+}
+
+.admin_user_display_error {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.admin_user_view_component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+  padding: 0.4em 0.6em;
+  color: black;
+  background-color: #D5D5D5;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 3px 3px 4px #c4c4c4;
+}
+
+.admin_user_view_component p {
+  font-weight: 500;
+}
+
+.admin_user_view_delete_btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  color: #f50000;
+  transition: all;
+  transition-duration: 0.2s;
+}
+
+.admin_user_view_delete_btn:hover {
+  transform: scale(1.1);
+  color: #ff2323;
   cursor: pointer;
 }
 

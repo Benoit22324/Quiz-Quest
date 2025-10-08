@@ -1,0 +1,12 @@
+.admin_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: $content-height;
+    margin-top: 0.8em;
+    text-align: center;
+}
+
+.admin_page_title {
+    font-size: 32px;
+}

@@ -9,6 +9,7 @@ userRouter.get("/all", isAuthenticated, isAdmin, getAllUsers);
 userRouter.get("/:id", isAuthenticated, getUser);
 userRouter.get("/", isAuthenticated, getUser);
 userRouter.put("/", isAuthenticated, updateUser);
+userRouter.delete("/:id", isAuthenticated, deleteUser);
 userRouter.delete("/", isAuthenticated, deleteUser);
 
 export default userRouter;

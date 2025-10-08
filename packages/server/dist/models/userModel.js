@@ -11,6 +11,7 @@ exports.userModel = {
                 columns: {
                     id: true,
                     username: true,
+                    email: true,
                     createdAt: true,
                     admin: true
                 }

@@ -9,6 +9,7 @@ import { QuizPage } from "../pages/QuizPage"
 import { PartPage } from "../pages/PartPage"
 import { ProfilePage } from "../pages/ProfilePage"
 import { QuizCreationPage } from "../pages/QuizCreationPage"
+import { AdminPage } from "../pages/AdminPage"
 
 export const MainRoutes = () => {
     const { user } = useAuth();
@@ -25,6 +26,7 @@ export const MainRoutes = () => {
                     user ? <>
                         <Route path="/create" element={<QuizCreationPage />} />
                         <Route path="/profile" element={<ProfilePage />} />
+                        <Route path="/admin" element={<AdminPage />} />
                     </>
                     : <>
                         <Route path="/login" element={<LoginPage />} />
