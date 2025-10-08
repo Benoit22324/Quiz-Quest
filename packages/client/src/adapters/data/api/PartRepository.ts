@@ -31,6 +31,27 @@ class PartRepository implements PartRepositoryInterface {
             throw new Error("Error during the fetch of the Quiz Part");
         }
     }
+
+    async addPart(quizId: string, question: string, answers: string, correctAnswer: string, index: number): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.post(`${apiUrl}/part/${quizId}`, {
+                question,
+                answers,
+                correctAnswer,
+                index
+            }, {
+                withCredentials: true
+            })
+
+            return {
+                data: null,
+                message: response.data.message,
+                success: true
+            }
+        } catch(err: any) {
+            throw new Error("Error during the creation of the Part");
+        }
+    }
 }
 
 export default PartRepository;

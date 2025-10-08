@@ -24,7 +24,8 @@ export const QuizPage = () => {
     const [quizData, setQuizData] = useState<Quiz | null>(null);
     const {
         control,
-        handleSubmit
+        handleSubmit,
+        setValue
     } = useForm();
 
     const handleFormSubmit = async (values: FieldValues) => {
@@ -38,7 +39,10 @@ export const QuizPage = () => {
                 };
                 const response = await addCommentUseCase.execute(newComment);
 
-                if (response) fetchQuiz();
+                if (response) {
+                    fetchQuiz();
+                    setValue("content", "");
+                }
             }
         } catch(err: any) {
             throw new Error("Error during the creation of the Comment");

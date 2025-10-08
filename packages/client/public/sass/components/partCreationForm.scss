@@ -1,0 +1,52 @@
+.part_creation_form {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 5px;
+    width: 80%;
+    margin-top: 0.8em;
+}
+
+.part_creation_input_container {
+    @include flexCenter;
+}
+
+.part_creation_label {
+    width: 25%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.part_creation_input {
+    width: 60%;
+}
+
+.part_creation_checkbox {
+    $size: 24px;
+    width: $size;
+    height: $size;
+    cursor: pointer;
+}
+
+.part_creation_next_btn {
+    @include btnStyle;
+    background-color: $light-orange;
+    box-shadow: 1px 1px 2px $lighter-orange;
+}
+
+.part_creation_next_btn:hover {
+    @include animateScale;
+    background-color: $lighter-orange;
+    cursor: pointer;
+}
+
+.part_creation_create_btn {
+    @include btnStyle;
+    background-color: $light-green;
+    box-shadow: 1px 1px 2px $lighter-green;
+}
+
+.part_creation_create_btn:hover {
+    @include animateScale;
+    background-color: $lighter-green;
+    cursor: pointer;
+}

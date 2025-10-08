@@ -6,7 +6,7 @@ const partRouter = Router();
 
 partRouter.get("/:quizId", getPartsByQuiz);
 partRouter.get("/:id/:index", getQuizPart);
-partRouter.post("/quizId", isAuthenticated, addQuizPart);
+partRouter.post("/:quizId", isAuthenticated, addQuizPart);
 partRouter.put("/:id", isAuthenticated, updateQuizPart);
 partRouter.delete("/:id", isAuthenticated, deleteQuizPart);
 

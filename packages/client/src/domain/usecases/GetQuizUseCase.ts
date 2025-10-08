@@ -13,7 +13,8 @@ class GetQuizUseCase {
 
             if (response.success && response.data) {
                 const data = response.data;
-                const quizData = new Quiz(data.id, data.title, data.difficulty, data.user, data.createdAt, data.notes, data.comments);
+                const quizComments = data.comments.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+                const quizData = new Quiz(data.id, data.title, data.difficulty, data.user, data.createdAt, data.notes, quizComments);
 
                 return quizData
             }

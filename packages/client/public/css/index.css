@@ -15,7 +15,8 @@ body {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 0.4em 0.8em;
   color: #D5D5D5;
@@ -23,6 +24,10 @@ textarea {
   font-size: 18px;
   font-weight: 600;
   border-radius: 8px;
+}
+
+option {
+  font-weight: 600;
 }
 
 input::placeholder {
@@ -340,7 +345,7 @@ input::placeholder {
 }
 
 .quiz_comment_title {
-  margin-top: 1.2em;
+  margin-top: 0.6em;
   font-size: 28px;
 }
 
@@ -505,6 +510,19 @@ input::placeholder {
 
 .profile_quiz_history_title {
   font-size: 28px;
+}
+
+.quiz_creation_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 87.5vh;
+}
+
+.quiz_creation_title {
+  font-size: 32px;
+  text-align: center;
 }
 
 .header_component {
@@ -720,7 +738,7 @@ input::placeholder {
   flex-direction: column;
   gap: 10px;
   width: 80%;
-  height: 44vh;
+  height: 46vh;
   margin: 0 auto;
   padding: 0 0.8em 0.4em;
   overflow: auto;
@@ -1192,6 +1210,124 @@ input::placeholder {
   background-color: #c4c4c4;
   border-radius: 6px;
   font-weight: 500;
+}
+
+.quiz_creation_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 80%;
+  margin-top: 0.8em;
+}
+
+.quiz_creation_input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz_creation_label {
+  width: 30%;
+  font-size: 18px;
+  text-align: center;
+}
+
+.quiz_creation_input {
+  width: 65%;
+}
+
+.quiz_creation_next_btn {
+  width: fit-content;
+  margin-top: 0.8em;
+  padding: 0.2em 0.6em;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all;
+  transition-duration: 0.2s;
+  background-color: #26E400;
+  box-shadow: 1px 1px 2px #3afa13;
+}
+
+.quiz_creation_next_btn:hover {
+  transform: scale(1.005);
+  background-color: #3afa13;
+  cursor: pointer;
+}
+
+.part_creation_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 80%;
+  margin-top: 0.8em;
+}
+
+.part_creation_input_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.part_creation_label {
+  width: 25%;
+  font-size: 18px;
+  text-align: center;
+}
+
+.part_creation_input {
+  width: 60%;
+}
+
+.part_creation_checkbox {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.part_creation_next_btn {
+  width: fit-content;
+  margin-top: 0.8em;
+  padding: 0.2em 0.6em;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all;
+  transition-duration: 0.2s;
+  background-color: #FFA600;
+  box-shadow: 1px 1px 2px #FFB56C;
+}
+
+.part_creation_next_btn:hover {
+  transform: scale(1.005);
+  background-color: #FFB56C;
+  cursor: pointer;
+}
+
+.part_creation_create_btn {
+  width: fit-content;
+  margin-top: 0.8em;
+  padding: 0.2em 0.6em;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all;
+  transition-duration: 0.2s;
+  background-color: #26E400;
+  box-shadow: 1px 1px 2px #3afa13;
+}
+
+.part_creation_create_btn:hover {
+  transform: scale(1.005);
+  background-color: #3afa13;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -40,6 +40,11 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             sameSite: "strict",
             secure: true
         });
+        res.cookie("autoReLog", true, {
+            sameSite: "strict",
+            secure: true,
+            expires: new Date(new Date().getTime() + (5 * 60 * 60 * 1000))
+        });
         return (0, apiResponse_1.apiResponse)(res, user.id, "You're now logged in");
     }
     catch (err) {
@@ -77,6 +82,7 @@ exports.authRegister = authRegister;
 const authLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         res.clearCookie("accessToken");
+        res.clearCookie("autoReLog");
         return (0, apiResponse_1.apiResponse)(res, null, "Logout successfully");
     }
     catch (err) {
