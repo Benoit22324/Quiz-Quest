@@ -1,0 +1,35 @@
+.admin_user_view_component {
+    @include flexCenter;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+    padding: 0.4em 0.6em;
+    color: black;
+    background-color: $light-gray;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 3px 3px 4px $dark-gray;
+}
+
+.admin_user_view_component p {
+    font-weight: 500;
+}
+
+.admin_user_view_delete_btn {
+    $pos: 8px;
+    $size: 20px;
+    position: absolute;
+    top: $pos;
+    right: $pos;
+    width: $size;
+    height: $size;
+    color: $light-red;
+    @include transition;
+}
+
+.admin_user_view_delete_btn:hover {
+    transform: scale(1.1);
+    color: $lighter-red;
+    cursor: pointer;
+}

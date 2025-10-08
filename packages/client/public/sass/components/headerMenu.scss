@@ -1,0 +1,68 @@
+.header_menu_component {
+    @include flexCenter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 50%);
+    backdrop-filter: blur(6px);
+    z-index: 20;
+}
+
+.header_menu_close_btn {
+    $size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: $size;
+    height: $size;
+    border-radius: 8px;
+    @include transition;
+}
+
+.header_menu_close_btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.nav_bar_container {
+    width: 60%;
+}
+
+.nav_bar {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.nav_link {
+    padding: 1em 0;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-top: 1px solid white;
+    @include transition;
+}
+
+.nav_link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav_link_current {
+    text-decoration: underline;
+}
+
+.nav_link:first-child {
+    $top-radius: 10px;
+    border: none;
+    border-top-left-radius: $top-radius;
+    border-top-right-radius: $top-radius;
+}
+
+.nav_link:last-child {
+    $top-radius: 10px;
+    border-bottom-left-radius: $top-radius;
+    border-bottom-right-radius: $top-radius;
+}

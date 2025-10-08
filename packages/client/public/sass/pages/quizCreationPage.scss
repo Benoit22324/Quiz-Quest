@@ -1,0 +1,10 @@
+.quiz_creation_page {
+    @include flexCenter;
+    flex-direction: column;
+    height: $content-height;
+}
+
+.quiz_creation_title {
+    font-size: 32px;
+    text-align: center;
+}

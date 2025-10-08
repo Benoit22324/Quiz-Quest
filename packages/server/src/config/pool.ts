@@ -1,11 +1,11 @@
-import { Pool } from "pg";
 import { env } from "./env";
-import { drizzle, NodePgDatabase } from "drizzle-orm/node-postgres";
-
+import { drizzle, NeonHttpDatabase } from "drizzle-orm/neon-http";
 import * as schema from "../schemas";
+import { neon, neonConfig } from "@neondatabase/serverless";
+import ws from "ws";
 
-export const pool = new Pool({
-    connectionString: env.DATABASE_URL
-})
+neonConfig.webSocketConstructor = ws;
 
-export const db: NodePgDatabase<typeof schema> = drizzle(pool, { schema });
+export const sql = neon(env.DATABASE_URL);
+
+export const db: NeonHttpDatabase<typeof schema> = drizzle({ client: sql, schema });

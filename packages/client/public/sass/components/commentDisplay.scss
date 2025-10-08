@@ -1,0 +1,15 @@
+.comment_display_component {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    height: 46vh;
+    margin: 0 auto;
+    padding: 0 0.8em 0.4em;
+    overflow: auto;
+}
+
+.comment_display_error {
+    font-size: 18px;
+    font-weight: 500;
+}

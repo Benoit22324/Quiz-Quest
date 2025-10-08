@@ -1,0 +1,36 @@
+.run_view_component {
+    @include flexCenter;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+    padding: 0.4em 0.6em;
+    color: black;
+    background-color: $light-gray;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 3px 3px 4px $dark-gray;
+}
+
+.run_view_date {
+    $pos: 2px;
+    position: absolute;
+    top: $pos;
+    left: $pos;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.run_view_star_container {
+    @include flexCenter;
+}
+
+.run_view_author {
+    font-size: 16px;
+}
+
+.run_view_score {
+    background-color: $dark-gray;
+    border-radius: 6px;
+    font-weight: 500;
+}

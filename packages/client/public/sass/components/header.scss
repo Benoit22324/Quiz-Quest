@@ -1,0 +1,24 @@
+.header_component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2em 0.8em;
+    background-color: $light-gray;
+}
+
+.header_logo {
+    width: 100px;
+}
+
+.header_burger_menu {
+    $size: 24px;
+    width: $size;
+    height: $size;
+    margin-right: 10px;
+    @include transition;
+}
+
+.header_burger_menu:hover {
+    background-color: $dark-gray;
+    border-radius: 6px;
+}

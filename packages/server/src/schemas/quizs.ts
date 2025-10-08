@@ -1,6 +1,10 @@
-import { pgTable, uuid, varchar } from "drizzle-orm/pg-core";
+import { pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { users } from "./";
 
 export const quizs = pgTable("quizs", {
     id: uuid("id").defaultRandom().primaryKey(),
-    name: varchar("name", { length: 255 }).notNull()
+    title: varchar("title", { length: 100 }).notNull(),
+    difficulty: varchar("difficulty", { length: 60 }).notNull(),
+    authorId: uuid("author_id").references(() => users.id, { onDelete: "cascade" }).notNull(),
+    createdAt: timestamp("created_at").defaultNow()
 })

@@ -1,0 +1,66 @@
+.profile_page {
+    @include flexCenter;
+    flex-direction: column;
+    text-align: center;
+}
+
+// Profile User Info Section
+.profile_user_info_section {
+    @include flexCenter;
+    flex-direction: column;
+    margin-top: 1.4em;
+}
+
+.profile_user_info_section p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile_user_title {
+    margin-bottom: 0.2em;
+    font-size: 32px;
+}
+
+.profile_info_btn_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.profile_modify_btn {
+    @include btnStyle;
+    font-size: 18px;
+    background-color: $light-blue;
+    box-shadow: 3px 3px 4px $lighter-blue;
+}
+
+.profile_modify_btn:hover {
+    @include animateScale;
+    background-color: $lighter-blue;
+    cursor: pointer;
+}
+
+.profile_delete_btn {
+    @include btnStyle;
+    font-size: 18px;
+    background-color: $light-red;
+    box-shadow: 3px 3px 4px $lighter-red;
+}
+
+.profile_delete_btn:hover {
+    @include animateScale;
+    background-color: $lighter-red;
+    cursor: pointer;
+}
+
+// Profile Quiz History
+.profile_quiz_history {
+    @include flexCenter;
+    flex-direction: column;
+    margin-top: 1.2em;
+}
+
+.profile_quiz_history_title {
+    font-size: 28px;
+}

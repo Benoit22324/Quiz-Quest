@@ -1,0 +1,94 @@
+.part_result_note_container {
+    @include flexCenter;
+    flex-direction: column;
+}
+
+.part_result_note {
+    font-size: 20px;
+    font-weight: 500
+}
+
+.part_result_star_container {
+    @include flexCenter;
+}
+
+.part_result_star_container span {
+    width: fit-content;
+}
+
+.part_result_score {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.part_result_answer_display {
+    width: 70%;
+    padding: 0.4em 1em;
+    background-color: $light-gray;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 4px $dark-gray;
+}
+
+.part_result_answer_display p {
+    font-weight: 500;
+}
+
+.quiz_result_answer_title {
+    $spacing: 0.5em;
+    margin-bottom: $spacing;
+    padding-bottom: $spacing;
+    border-bottom: 1px solid black;
+}
+
+.part_result_correct_answer {
+    color: $dark-green;
+}
+
+.part_result_wrong_answer {
+    color: $dark-red;
+}
+
+.part_result_btn_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.part_result_prev_btn {
+    @include btnStyle;
+    background-color: $light-blue;
+    box-shadow: 1px 1px 2px $lighter-blue;
+}
+
+.part_result_prev_btn:hover {
+    @include animateScale;
+    background-color: $lighter-blue;
+    cursor: pointer;
+}
+
+.part_result_next_btn {
+    @include btnStyle;
+    background-color: $light-green;
+    box-shadow: 1px 1px 2px $lighter-green;
+}
+
+.part_result_next_btn:hover {
+    @include animateScale;
+    background-color: $lighter-green;
+    cursor: pointer;
+}
+
+.part_result_leave_btn {
+    @include btnStyle;
+    color: black;
+    background-color: $light-gray;
+    box-shadow: 1px 1px 2px $dark-gray;
+}
+
+.part_result_leave_btn:hover {
+    @include animateScale;
+    background-color: $dark-gray;
+    cursor: pointer;
+}

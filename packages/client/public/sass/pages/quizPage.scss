@@ -1,0 +1,82 @@
+.quiz_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Quiz Info Section
+.quiz_info_section {
+    @include flexCenter;
+    flex-direction: column;
+    text-align: center;
+}
+
+.quiz_title {
+    margin-top: 0.8em;
+    font-size: 32px;
+}
+
+.quiz_author {
+    font-size: 20px;
+}
+
+.quiz_star_container {
+    $margin: 0.8em;
+    @include flexCenter;
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+.quiz_difficulty {
+    margin-bottom: 0.4em;
+    font-size: 24px;
+}
+
+.quiz_start_btn {
+    @include btnStyle;
+    color: black;
+    background-color: $light-green;
+    box-shadow: 1px 1px 2px $lighter-green;
+}
+
+.quiz_start_btn:hover {
+    @include animateScale;
+    background-color: $lighter-green;
+}
+
+// Quiz Comment Section
+.quiz_comment_section {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+}
+
+.quiz_comment_title {
+    margin-top: 0.6em;
+    font-size: 28px;
+}
+
+.quiz_comment_form {
+    @include flexCenter;
+    gap: 5px;
+    width: 80%;
+}
+
+.quiz_comment_input {
+    resize: none;
+    height: 40px;
+}
+
+.quiz_comment_submit_btn {
+    @include btnStyle;
+    margin: 0;
+    background-color: $light-gray;
+    box-shadow: 1px 1px 2px $dark-gray;
+}
+
+.quiz_comment_submit_btn:hover {
+    @include animateScale;
+    background-color: $dark-gray;
+    cursor: pointer;
+}

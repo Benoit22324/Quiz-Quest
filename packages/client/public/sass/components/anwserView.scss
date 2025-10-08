@@ -1,0 +1,23 @@
+.answer_view_component {
+    @include flexCenter;
+    width: 60%;
+    padding: 0.2em 0.6em;
+    background-color: $light-gray;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    box-shadow: 3px 3px 4px $dark-gray;
+    @include transition;
+}
+
+.answer_view_component:hover {
+    @include animateScale;
+    background-color: $dark-gray;
+    cursor: pointer;
+}
+
+.answer_view_selected {
+    transform: scale(1.05)!important;
+    background-color: $light-blue!important;
+    box-shadow: 3px 3px 4px $lighter-blue!important;
+}

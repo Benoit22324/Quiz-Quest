@@ -1,0 +1,44 @@
+.home_page {
+    display: flex;
+    flex-direction: column;
+}
+
+// Introduction Section
+.introduction_section {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 10px;
+    height: 20vh;
+    background-color: $dark-gray;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.introduction_section > * {
+    width: fit-content;
+}
+
+.introduction_section_register_btn {
+    padding: 0.2em 0.6em;
+    color: black;
+    background-color: $light-orange;
+    text-decoration: none;
+    border-radius: 6px;
+    @include transition;
+}
+
+.introduction_section_register_btn:hover {
+    @include animateScale;
+    background-color: $lighter-orange;
+}
+
+// Daily Quiz Section
+.daily_section {
+    padding: 0.8em;
+    text-align: center;
+}
+
+.daily_title {
+    margin-bottom: 10px;
+    font-size: 28px;
+}

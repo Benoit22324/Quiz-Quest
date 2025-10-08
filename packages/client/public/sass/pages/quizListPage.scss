@@ -1,0 +1,48 @@
+.quiz_list_page {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz_list_title {
+    margin-top: 0.2em;
+    text-align: center;
+    font-size: 34px;
+}
+
+// Search Section
+.search_bar_section {
+    @include flexCenter;
+    gap: 10px;
+    padding: 0.8em 0;
+}
+
+.search_bar {
+    width: 70%;
+    box-shadow: 3px 3px 4px $dark-gray;
+}
+
+.search_button {
+    $size: 38px;
+    width: $size;
+    height: $size;
+    padding: 8px;
+    background-color: $light-gray;
+    border-radius: 8px;
+    box-shadow: 3px 3px 4px $dark-gray;
+    @include transition;
+}
+
+.search_button:hover {
+    @include animateScale;
+    background-color: $dark-gray;
+    cursor: pointer;
+}
+
+// Quiz Section
+.quiz_list_section {
+    margin-top: 10px;
+}
+
+.quiz_display_height {
+    height: 70vh!important;
+}
