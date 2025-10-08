@@ -24,3 +24,19 @@
 .quiz_view_author {
     font-size: 16px;
 }
+
+.quiz_view_delete_btn {
+    $pos: 8px;
+    $size: 20px;
+    position: absolute;
+    top: $pos;
+    right: $pos;
+    width: $size;
+    height: $size;
+    color: $light-red;
+    @include transition;
+}
+
+.quiz_view_delete_btn:hover {
+    color: $lighter-red;
+}

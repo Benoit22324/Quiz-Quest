@@ -22,6 +22,7 @@ export const QuizPage = () => {
     const addCommentUseCase = new AddCommentUseCase(commentRepository);
 
     const [quizData, setQuizData] = useState<Quiz | null>(null);
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
     const {
         control,
         handleSubmit,
@@ -63,8 +64,8 @@ export const QuizPage = () => {
     }
 
     useEffect(() => {
-        fetchQuiz()
-    }, [])
+        if (!isDeleting) fetchQuiz()
+    }, [isDeleting])
 
     return <>
         <div className="quiz_page">
@@ -98,7 +99,7 @@ export const QuizPage = () => {
                             </form>
                         }
 
-                        <CommentDisplay commentList={quizData.getComments()} />
+                        <CommentDisplay commentList={quizData.getComments()} setDelete={setIsDeleting} />
                     </section>
                 </>
             }

@@ -8,17 +8,33 @@ import { RunDisplay } from "../components/RunDisplay";
 import { UserModifyModal } from "../components/UserModifyModal";
 import { Alert } from "../components/Alert";
 import { DeleteConfirmationModal } from "../components/DeleteConfirmationModal";
+import UserRepository from "../../data/api/UserRepository";
+import DeleteUserUseCase from "../../../domain/usecases/DeleteUserUseCase";
 
 export const ProfilePage = () => {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
 
     const runRepository = new RunRepository();
+    const userRepository = new UserRepository();
     const getRunByUserUseCase = new GetRunByUserUseCase(runRepository);
+    const deleteUserUseCase = new DeleteUserUseCase(userRepository);
 
     const [userRuns, setUserRuns] = useState<Run[] | null>(null);
     const [modifyModalOpen, setModifyModalOpen] = useState<boolean>(false);
     const [delConfirmModalOpen, setDelConfirmModalOpen] = useState<boolean>(false);
     const [logSuccess, setLogSuccess] = useState<string | null>(null);
+
+    const handleDelete = async() => {
+        try {
+            if (user) {
+                await deleteUserUseCase.execute();
+
+                logout();
+            }
+        } catch(err: any) {
+            throw new Error("Error during the deletion of the User");
+        }
+    }
 
     const fetchRun = async () => {
         try {
@@ -45,6 +61,7 @@ export const ProfilePage = () => {
         }
         {
             delConfirmModalOpen && <DeleteConfirmationModal
+                handleConfirm={handleDelete}
                 onClose={() => setDelConfirmModalOpen(false)}
             />
         }

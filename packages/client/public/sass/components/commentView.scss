@@ -1,6 +1,7 @@
 .comment_view_component {
     display: flex;
     flex-direction: column;
+    position: relative;
     gap: 6px;
     padding: 0.6em 0.8em;
     background-color: $light-gray;
@@ -30,4 +31,22 @@
 .comment_view_content {
     @extend .comment_view_time;
     font-weight: 500;
+}
+
+
+
+.comment_view_delete_btn {
+    $pos: 8px;
+    $size: 20px;
+    position: absolute;
+    bottom: $pos;
+    right: $pos;
+    width: $size;
+    height: $size;
+    color: $light-red;
+    @include transition;
+}
+
+.comment_view_delete_btn:hover {
+    color: $lighter-red;
 }

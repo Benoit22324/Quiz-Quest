@@ -21,6 +21,22 @@ class CommentRepository implements CommentRepositoryInterface {
             throw new Error("Error during the creation of the Comment");
         }
     }
+
+    async deleteComment(id: string): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.delete(`${apiUrl}/comment/${id}`, {
+                withCredentials: true
+            })
+
+            return {
+                data: null,
+                message: response.data.message,
+                success: true
+            }
+        } catch(err: any) {
+            throw new Error("Error during the deletion of the Comment");
+        }
+    }
 }
 
 export default CommentRepository;

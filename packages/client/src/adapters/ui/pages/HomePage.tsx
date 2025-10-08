@@ -10,6 +10,7 @@ export const HomePage = () => {
     const getAllQuizsUseCase = new GetAllQuizsUseCase(quizRepository);
 
     const [quizs, setQuizs] = useState<Quiz[] | null>(null);
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
     const fetchQuizs = async () => {
         try {
@@ -44,8 +45,8 @@ export const HomePage = () => {
     }
 
     useEffect(() => {
-        fetchQuizs()
-    }, [])
+        if (!isDeleting) fetchQuizs()
+    }, [isDeleting])
 
     return <>
         <div className="home_page">
@@ -61,7 +62,7 @@ export const HomePage = () => {
             <section className="daily_section">
                 <h2 className="daily_title">Daily Quiz</h2>
 
-                <QuizDisplay quizList={randomQuiz(quizs)} />
+                <QuizDisplay quizList={randomQuiz(quizs)} setDelete={setIsDeleting} />
             </section>
         </div>
     </>

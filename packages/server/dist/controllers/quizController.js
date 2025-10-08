@@ -80,8 +80,7 @@ exports.updateQuiz = updateQuiz;
 const deleteQuiz = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
-        const { user } = res.locals;
-        yield models_1.quizModel.delete(id, user.id);
+        yield models_1.quizModel.delete(id);
         return (0, apiResponse_1.apiResponse)(res, null, "Quiz was successfully deleted");
     }
     catch (err) {

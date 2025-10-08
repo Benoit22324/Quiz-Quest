@@ -12,6 +12,7 @@ export const QuizListPage = () => {
     const [quizList, setQuizList] = useState<Quiz[] | null>(null);
     const [searchValue, setSearchValue] = useState<string>("");
     const [searchedQuizList, setSearchedQuizList] = useState<Quiz[] | null>(null);
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
     const fetchQuizs = async () => {
         try {
@@ -38,8 +39,8 @@ export const QuizListPage = () => {
     }
 
     useEffect(() => {
-        fetchQuizs()
-    }, [])
+        if (!isDeleting) fetchQuizs()
+    }, [isDeleting])
 
     return <>
         <div className="quiz_list_page">
@@ -51,7 +52,7 @@ export const QuizListPage = () => {
             </section>
 
             <section className="quiz_list_section">
-                <QuizDisplay quizList={searchedQuizList || quizList} customClass="quiz_display_height" />
+                <QuizDisplay quizList={searchedQuizList || quizList} setDelete={setIsDeleting} customClass="quiz_display_height" />
             </section>
         </div>
     </>

@@ -105,13 +105,10 @@ export const quizModel = {
         }
     },
 
-    delete: (id: string, authorId: string) => {
+    delete: (id: string) => {
         try {
             return db.delete(quizs).where(
-                and(
-                    eq(quizs.id, id),
-                    eq(quizs.authorId, authorId)
-                )
+                eq(quizs.id, id)
             )
         } catch(err: any) {
             console.error(`Error during the deletion of the Quiz: ${err.message}`);

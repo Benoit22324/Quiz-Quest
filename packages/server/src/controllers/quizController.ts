@@ -69,9 +69,8 @@ export const updateQuiz = async (req: Request, res: Response) => {
 export const deleteQuiz = async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        const { user } = res.locals;
 
-        await quizModel.delete(id, user.id);
+        await quizModel.delete(id);
 
         return apiResponse(res, null, "Quiz was successfully deleted");
     } catch(err: any) {

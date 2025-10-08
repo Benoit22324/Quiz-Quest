@@ -156,8 +156,7 @@ export const PartCreationForm = ({ partData, handleChange, currentIndex, onSave 
                 }
             </div>
 
-
-            <button className="part_creation_next_btn">{(partData.length === currentIndex - 1) ? "New Question" : "Next"}</button>
+            <button className="part_creation_next_btn">{(partData.length === currentIndex - 1) ? "Confirm Part" : "Next"}</button>
 
             <button type="button" className="part_creation_create_btn" onClick={onSave}>Create</button>
         </form>

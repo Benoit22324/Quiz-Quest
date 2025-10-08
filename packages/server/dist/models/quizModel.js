@@ -101,9 +101,9 @@ exports.quizModel = {
             throw new Error("The Quiz couldn't be updated");
         }
     },
-    delete: (id, authorId) => {
+    delete: (id) => {
         try {
-            return pool_1.db.delete(schemas_1.quizs).where((0, drizzle_orm_1.and)((0, drizzle_orm_1.eq)(schemas_1.quizs.id, id), (0, drizzle_orm_1.eq)(schemas_1.quizs.authorId, authorId)));
+            return pool_1.db.delete(schemas_1.quizs).where((0, drizzle_orm_1.eq)(schemas_1.quizs.id, id));
         }
         catch (err) {
             console.error(`Error during the deletion of the Quiz: ${err.message}`);

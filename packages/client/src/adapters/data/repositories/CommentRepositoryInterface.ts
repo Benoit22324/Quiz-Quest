@@ -2,4 +2,5 @@ import type { RepositoryOutput } from "../../../interfaces/outputs/RepositoryOut
 
 export interface CommentRepositoryInterface {
     addComment: (quizId: string, content: string) => Promise<RepositoryOutput>
+    deleteComment: (id: string) => Promise<RepositoryOutput>
 }

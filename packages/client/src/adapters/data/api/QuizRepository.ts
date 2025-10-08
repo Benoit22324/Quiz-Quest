@@ -65,6 +65,22 @@ class QuizRepository implements QuizRepositoryInterface {
             throw new Error("Error during the creation of the Quiz");
         }
     }
+
+    async deleteQuiz(id: string): Promise<RepositoryOutput> {
+        try {
+            const response = await axios.delete(`${apiUrl}/quiz/${id}`, {
+                withCredentials: true
+            })
+
+            return {
+                data: null,
+                message: response.data.message,
+                success: true
+            }
+        } catch(err: any) {
+            throw new Error("Error during the deletion of the Quiz");
+        }
+    }
 }
 
 export default QuizRepository;
