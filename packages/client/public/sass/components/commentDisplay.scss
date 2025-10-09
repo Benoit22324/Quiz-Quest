@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 10px;
     width: 80%;
-    height: 46vh;
+    height: 50vh;
     margin: 0 auto;
     padding: 0 0.8em 0.4em;
     overflow: auto;
@@ -12,4 +12,10 @@
 .comment_display_error {
     font-size: 18px;
     font-weight: 500;
+}
+
+@media (min-width: $desktop-width) {
+    .comment_display_component {
+        height: 53vh;
+    }
 }

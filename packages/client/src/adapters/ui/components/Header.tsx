@@ -11,7 +11,7 @@ export const Header = () => {
         <header className="header_component">
             <div className="header_logo">
                 <Link to="/">
-                    <img src={logo} />
+                    <img src={logo} alt="Quiz Quest Logo" />
                 </Link>
             </div>
 

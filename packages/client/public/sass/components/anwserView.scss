@@ -22,7 +22,7 @@
     box-shadow: 3px 3px 4px $lighter-blue!important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .answer_view_component {
         width: 25%;
     }

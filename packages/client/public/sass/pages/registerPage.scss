@@ -56,7 +56,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .register_page {
         width: 40%;
         margin: auto;

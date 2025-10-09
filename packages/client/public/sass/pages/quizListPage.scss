@@ -47,8 +47,12 @@
     height: 70vh!important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .search_bar {
         width: 30%;
+    }
+
+    .quiz_display_height {
+        max-height: 70vh!important;
     }
 }

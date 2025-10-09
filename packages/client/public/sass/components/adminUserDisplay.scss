@@ -14,7 +14,7 @@
     font-weight: 500;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .admin_user_display_component {
         width: 25%;
     }

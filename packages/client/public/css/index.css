@@ -98,7 +98,7 @@ input::placeholder {
   font-size: 28px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .home_page {
     width: 80%;
     margin: auto;
@@ -153,9 +153,12 @@ input::placeholder {
   height: 70vh !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .search_bar {
     width: 30%;
+  }
+  .quiz_display_height {
+    max-height: 70vh !important;
   }
 }
 .login_page {
@@ -227,7 +230,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .login_page {
     width: 40%;
     margin: auto;
@@ -305,7 +308,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .register_page {
     width: 40%;
     margin: auto;
@@ -418,7 +421,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .quiz_comment_section {
     width: 40%;
   }
@@ -468,6 +471,11 @@ input::placeholder {
   gap: 8px;
 }
 
+@media (min-width: 960px) {
+  .part_quiz_indexer {
+    font-size: 28px;
+  }
+}
 .profile_page {
   display: flex;
   justify-content: center;
@@ -555,7 +563,7 @@ input::placeholder {
   font-size: 28px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .profile_page {
     width: 40%;
     margin: auto;
@@ -577,7 +585,7 @@ input::placeholder {
   text-align: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .quiz_creation_page {
     width: 35%;
     margin: auto;
@@ -622,7 +630,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .header_logo {
     width: 120px;
   }
@@ -702,7 +710,7 @@ input::placeholder {
   border-bottom-right-radius: 10px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .header_menu_component {
     top: 60px;
     left: auto;
@@ -774,7 +782,7 @@ input::placeholder {
   color: rgb(22, 22, 177);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .footer_component {
     padding: 0.8em;
   }
@@ -803,11 +811,13 @@ input::placeholder {
   text-align: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .quiz_display_component {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    max-height: 59vh;
+    height: fit-content;
   }
 }
 .quiz_view_component {
@@ -859,9 +869,10 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .quiz_view_container {
     width: 30%;
+    height: fit-content;
   }
 }
 .alert_component {
@@ -884,12 +895,17 @@ input::placeholder {
   background-color: #DE2626;
 }
 
+@media (min-width: 960px) {
+  .alert_component {
+    font-size: 24px;
+  }
+}
 .comment_display_component {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 80%;
-  height: 46vh;
+  height: 50vh;
   margin: 0 auto;
   padding: 0 0.8em 0.4em;
   overflow: auto;
@@ -900,6 +916,11 @@ input::placeholder {
   font-weight: 500;
 }
 
+@media (min-width: 960px) {
+  .comment_display_component {
+    height: 53vh;
+  }
+}
 .comment_view_component {
   display: flex;
   flex-direction: column;
@@ -1002,7 +1023,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .qa_display_btn_container {
     width: 20%;
   }
@@ -1034,7 +1055,7 @@ input::placeholder {
   box-shadow: 3px 3px 4px #34c2ff !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .answer_view_component {
     width: 25%;
   }
@@ -1162,7 +1183,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .part_result_answer_display {
     width: fit-content;
     max-width: 40%;
@@ -1344,7 +1365,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .delete_confirmation_modal {
     width: 20%;
   }
@@ -1546,7 +1567,7 @@ input::placeholder {
   font-weight: 500;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
   .admin_user_display_component {
     width: 25%;
   }

@@ -94,7 +94,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .part_result_answer_display {
         width: fit-content;
         max-width: 40%;

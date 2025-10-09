@@ -65,7 +65,7 @@
     font-size: 28px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .profile_page {
         width: 40%;
         margin: auto;

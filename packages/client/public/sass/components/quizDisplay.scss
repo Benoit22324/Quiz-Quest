@@ -15,10 +15,12 @@
     text-align: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .quiz_display_component {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        max-height: 59vh;
+        height: fit-content;
     }
 }

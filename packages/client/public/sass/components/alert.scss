@@ -18,3 +18,9 @@
 .alert_error {
     background-color: $dark-red;
 }
+
+@media (min-width: $desktop-width) {
+    .alert_component {
+        font-size: 24px;
+    }
+}

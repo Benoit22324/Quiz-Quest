@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .quiz_comment_section {
         width: 40%;
     }

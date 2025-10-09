@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .qa_display_btn_container {
         width: 20%;
     }

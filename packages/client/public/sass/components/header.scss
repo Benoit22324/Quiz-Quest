@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .header_logo {
         width: 120px;
     }

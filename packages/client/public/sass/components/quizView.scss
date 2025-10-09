@@ -43,8 +43,9 @@
     cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .quiz_view_container {
         width: 30%;
+        height: fit-content;
     }
 }

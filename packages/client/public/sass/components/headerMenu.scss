@@ -68,7 +68,7 @@
     border-bottom-right-radius: $top-radius;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop-width) {
     .header_menu_component {
         top: 60px;
         left: auto;
