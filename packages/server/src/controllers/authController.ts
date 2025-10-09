@@ -28,12 +28,14 @@ export const authLogin = async (req: Request, res: Response) => {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             sameSite: "none",
-            secure: true
+            secure: true,
+            domain: env.DOMAIN
         })
         res.cookie("autoReLog", true, {
             sameSite: "none",
             secure: true,
-            expires: new Date(new Date().getTime() + (5*60*60*1000))
+            expires: new Date(new Date().getTime() + (5*60*60*1000)),
+            domain: env.DOMAIN
         })
 
         return apiResponse(res, user.id, "You're now logged in");
