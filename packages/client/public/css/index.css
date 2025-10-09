@@ -1292,6 +1292,11 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media (min-width: 960px) {
+  .user_modify_modal {
+    width: 20%;
+  }
+}
 .delete_confirmation_modal_component {
   display: flex;
   justify-content: center;
