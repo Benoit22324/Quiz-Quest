@@ -6,8 +6,13 @@ import { apiUrl } from "../../../env";
 class RunRepository implements RunRepositoryInterface {
     async getRunByUser(userId: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.get(`${apiUrl}/run/${userId}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             if (response.status === 200) {
@@ -30,10 +35,15 @@ class RunRepository implements RunRepositoryInterface {
 
     async addRun(quizId: string, result: number): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.post(`${apiUrl}/run/${quizId}`, {
                 result
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {

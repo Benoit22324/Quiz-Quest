@@ -29,8 +29,13 @@ class QuizRepository implements QuizRepositoryInterface {
 
     async getQuiz(id: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.get(`${apiUrl}/quiz/${id}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             });
 
             return {
@@ -45,11 +50,16 @@ class QuizRepository implements QuizRepositoryInterface {
 
     async addQuiz(title: string, difficulty: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.post(`${apiUrl}/quiz`, {
                 title,
                 difficulty
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             });
 
             if (response.status === 201) {
@@ -68,8 +78,13 @@ class QuizRepository implements QuizRepositoryInterface {
 
     async deleteQuiz(id: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.delete(`${apiUrl}/quiz/${id}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {

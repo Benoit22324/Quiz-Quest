@@ -34,13 +34,18 @@ class PartRepository implements PartRepositoryInterface {
 
     async addPart(quizId: string, question: string, answers: string, correctAnswer: string, index: number): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.post(`${apiUrl}/part/${quizId}`, {
                 question,
                 answers,
                 correctAnswer,
                 index
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {
