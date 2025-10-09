@@ -28,14 +28,12 @@ export const authLogin = async (req: Request, res: Response) => {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             sameSite: "none",
-            secure: true,
-            domain: "localhost"
+            secure: true
         })
         res.cookie("autoReLog", true, {
             sameSite: "none",
             secure: true,
-            expires: new Date(new Date().getTime() + (5*60*60*1000)),
-            domain: "localhost"
+            expires: new Date(new Date().getTime() + (5*60*60*1000))
         })
 
         return apiResponse(res, user.id, "You're now logged in");
@@ -73,8 +71,12 @@ export const authRegister = async (req: Request, res: Response) => {
 
 export const authLogout = async (req: Request, res: Response) => {
     try {
-        res.clearCookie("accessToken");
-        res.clearCookie("autoReLog");
+        res.clearCookie("accessToken", {
+            path: "/"
+        });
+        res.clearCookie("autoReLog", {
+            path: "/"
+        });
 
         return apiResponse(res, null, "Logout successfully");
     } catch(err: any) {
