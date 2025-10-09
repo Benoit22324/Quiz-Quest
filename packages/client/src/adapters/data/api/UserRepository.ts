@@ -7,8 +7,13 @@ import { repositoryError } from "../../../domain/errors/repositoryError";
 class UserRepository implements UserRepositoryInterface {
     async getAllUser(): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.get(`${apiUrl}/user/all`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             if (response.status === 200) {
@@ -27,8 +32,13 @@ class UserRepository implements UserRepositoryInterface {
 
     async getUser(id: string | null): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.get(`${apiUrl}/user${id ? `/${id}` : ""}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             });
 
             if (response.status === 200) {
@@ -51,12 +61,17 @@ class UserRepository implements UserRepositoryInterface {
 
     async updateUser(username: string, email: string, password: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.put(`${apiUrl}/user`, {
                 username,
                 email,
                 password
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             if (response.status === 201) {
@@ -79,8 +94,13 @@ class UserRepository implements UserRepositoryInterface {
 
     async deleteUser(id: string | null): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.delete(`${apiUrl}/user${id ? `/${id}` : ""}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {

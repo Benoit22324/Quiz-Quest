@@ -15,10 +15,8 @@ class AuthRepository implements AuthRepositoryInterface {
             });
 
             if (response.status === 200) {
-                // debugger
-                document.cookie = `accessToken=${response.data.data.accessToken};secure=true;sameSite="none"`;
-                document.cookie = `autoReLog=true;secure=true;sameSite="none"`;
-                
+                document.cookie = `accessToken=${response.data.data.accessToken};secure=true;`;
+                document.cookie = `autoReLog=true;secure=true;`;
 
                 return {
                     data: response.data.data.userId,

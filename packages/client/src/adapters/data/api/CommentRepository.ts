@@ -6,10 +6,15 @@ import { apiUrl } from "../../../env";
 class CommentRepository implements CommentRepositoryInterface {
     async addComment(quizId: string, content: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.post(`${apiUrl}/comment/${quizId}`, {
                 content
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {
@@ -24,8 +29,13 @@ class CommentRepository implements CommentRepositoryInterface {
 
     async deleteComment(id: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.delete(`${apiUrl}/comment/${id}`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {

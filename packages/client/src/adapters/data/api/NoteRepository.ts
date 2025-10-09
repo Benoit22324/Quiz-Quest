@@ -6,8 +6,13 @@ import { apiUrl } from "../../../env";
 class NoteRepository implements NoteRepositoryInterface {
     async getNoteByUser(quizId: string): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.get(`${apiUrl}/note/${quizId}/user`, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             });
 
             if (response.status !== 200) {
@@ -30,10 +35,15 @@ class NoteRepository implements NoteRepositoryInterface {
 
     async addNote(quizId: string, note: number): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.post(`${apiUrl}/note/${quizId}`, {
                 note
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {
@@ -48,11 +58,16 @@ class NoteRepository implements NoteRepositoryInterface {
 
     async updateNote(id: string, quizId: string, note: number): Promise<RepositoryOutput> {
         try {
+            const m = document.cookie.match(/accessToken=([^;]+)/);
+            const token = m ? m[1] : null
             const response = await axios.put(`${apiUrl}/note/${id}`, {
                 note,
                 quizId
             }, {
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             })
 
             return {

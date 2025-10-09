@@ -4,7 +4,7 @@ import { apiResponse } from "../utils/apiResponse";
 import { env } from "../config/env";
 
 export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
-    const { accessToken } = req.cookies;
+    const accessToken = req.headers.authorization?.replace("Bearer ", "");
 
     if (!accessToken) return apiResponse(res, null, "You're not authenticated", 401);
 
