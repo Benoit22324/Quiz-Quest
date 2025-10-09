@@ -32,6 +32,7 @@ export const authLogin = async (req: Request, res: Response) => {
         })
         res.cookie("autoReLog", true, {
             sameSite: "none",
+            secure: true,
             expires: new Date(new Date().getTime() + (5*60*60*1000))
         })
 

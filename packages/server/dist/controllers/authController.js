@@ -42,6 +42,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
         res.cookie("autoReLog", true, {
             sameSite: "none",
+            secure: true,
             expires: new Date(new Date().getTime() + (5 * 60 * 60 * 1000))
         });
         return (0, apiResponse_1.apiResponse)(res, user.id, "You're now logged in");
