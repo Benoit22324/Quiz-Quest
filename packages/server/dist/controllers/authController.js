@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.authLogout = exports.authRegister = exports.authLogin = void 0;
+exports.authRegister = exports.authLogin = void 0;
 const argon2_1 = __importDefault(require("argon2"));
 const zod_1 = __importDefault(require("zod"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -35,17 +35,7 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }, env_1.env.JWT_SECRET, {
             expiresIn: "5h"
         });
-        res.cookie("accessToken", accessToken, {
-            httpOnly: true,
-            sameSite: "none",
-            secure: true
-        });
-        res.cookie("autoReLog", true, {
-            sameSite: "none",
-            secure: true,
-            expires: new Date(new Date().getTime() + (5 * 60 * 60 * 1000))
-        });
-        return (0, apiResponse_1.apiResponse)(res, user.id, "You're now logged in");
+        return (0, apiResponse_1.apiResponse)(res, { userId: user.id, accessToken }, "You're now logged in");
     }
     catch (err) {
         if (err instanceof zod_1.default.ZodError)
@@ -79,14 +69,3 @@ const authRegister = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.authRegister = authRegister;
-const authLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        res.clearCookie("accessToken");
-        res.clearCookie("autoReLog");
-        return (0, apiResponse_1.apiResponse)(res, null, "Logout successfully");
-    }
-    catch (err) {
-        return (0, apiResponse_1.apiResponse)(res, null, "Error during the logout", 500);
-    }
-});
-exports.authLogout = authLogout;
