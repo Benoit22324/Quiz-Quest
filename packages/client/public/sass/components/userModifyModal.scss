@@ -73,3 +73,9 @@
     background-color: $lighter-green;
     cursor: pointer;
 }
+
+@media (min-width: $desktop-width) {
+    .user_modify_modal {
+        width: 20%;
+    }
+}
