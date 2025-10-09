@@ -1,7 +1,6 @@
 export interface EnvConfig {
     PORT: number
     JWT_SECRET: string
-    DOMAIN: string
     DATABASE_URL: string
     PROJECT_ID: string
     PUBLISHABLE_CLIENT_KEY: string
