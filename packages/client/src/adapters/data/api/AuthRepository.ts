@@ -15,8 +15,13 @@ class AuthRepository implements AuthRepositoryInterface {
             });
 
             if (response.status === 200) {
+                // debugger
+                document.cookie = `accessToken=${response.data.data.accessToken};secure=true;sameSite="none"`;
+                document.cookie = `autoReLog=true;secure=true;sameSite="none"`;
+                
+
                 return {
-                    data: response.data.data,
+                    data: response.data.data.userId,
                     message: response.data.message,
                     success: true
                 }
@@ -54,9 +59,8 @@ class AuthRepository implements AuthRepositoryInterface {
 
     async logout(): Promise<void> {
         try {
-            await axios.get(`${apiUrl}/logout`, {
-                withCredentials: true
-            });
+            document.cookie = "accessToken=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+            document.cookie = "autoReLog=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
         } catch(err: any) {
             throw new Error("Error during the logout");
         }

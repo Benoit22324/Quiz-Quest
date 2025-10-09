@@ -25,18 +25,7 @@ export const authLogin = async (req: Request, res: Response) => {
             expiresIn: "5h"
         });
 
-        res.cookie("accessToken", accessToken, {
-            httpOnly: true,
-            sameSite: "none",
-            secure: true
-        })
-        res.cookie("autoReLog", true, {
-            sameSite: "none",
-            secure: true,
-            expires: new Date(new Date().getTime() + (5*60*60*1000))
-        })
-
-        return apiResponse(res, user.id, "You're now logged in");
+        return apiResponse(res, { userId: user.id, accessToken }, "You're now logged in");
     } catch(err: any) {
         if (err instanceof z.ZodError) return apiResponse(res, err.message, "Invalid Form", 400);
 
@@ -66,16 +55,5 @@ export const authRegister = async (req: Request, res: Response) => {
         if (err instanceof z.ZodError) return apiResponse(res, err.message, "Invalid Form", 400);
 
         return apiResponse(res, null, "Error during the registration", 500);
-    }
-}
-
-export const authLogout = async (req: Request, res: Response) => {
-    try {
-        res.clearCookie("accessToken");
-        res.clearCookie("autoReLog");
-
-        return apiResponse(res, null, "Logout successfully");
-    } catch(err: any) {
-        return apiResponse(res, null, "Error during the logout", 500);
     }
 }
