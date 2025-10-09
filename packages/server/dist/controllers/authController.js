@@ -81,11 +81,11 @@ const authRegister = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.authRegister = authRegister;
 const authLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        res.clearCookie("accessToken", {
-            path: "/"
+        res.cookie("accessToken", false, {
+            expires: new Date(0)
         });
-        res.clearCookie("autoReLog", {
-            path: "/"
+        res.cookie("autoReLog", false, {
+            expires: new Date(0)
         });
         return (0, apiResponse_1.apiResponse)(res, null, "Logout successfully");
     }
