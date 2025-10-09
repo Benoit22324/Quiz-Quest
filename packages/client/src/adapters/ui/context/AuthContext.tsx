@@ -63,6 +63,7 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => {
         const autoReLog = async () => {
             const auto = document.cookie;
+            console.log(auto)
 
             if (auto === "autoReLog=true") {
                 const userData = await getUserUseCase.execute({ id: null });

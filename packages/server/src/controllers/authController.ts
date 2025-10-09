@@ -72,10 +72,10 @@ export const authRegister = async (req: Request, res: Response) => {
 export const authLogout = async (req: Request, res: Response) => {
     try {
         res.clearCookie("accessToken", {
-            sameSite: "none"
+            domain: env.DOMAIN
         });
         res.clearCookie("autoReLog", {
-            sameSite: "none"
+            domain: env.DOMAIN
         });
 
         return apiResponse(res, null, "Logout successfully");

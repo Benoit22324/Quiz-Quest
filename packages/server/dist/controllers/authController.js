@@ -82,10 +82,10 @@ exports.authRegister = authRegister;
 const authLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         res.clearCookie("accessToken", {
-            sameSite: "none"
+            domain: env_1.env.DOMAIN
         });
         res.clearCookie("autoReLog", {
-            sameSite: "none"
+            domain: env_1.env.DOMAIN
         });
         return (0, apiResponse_1.apiResponse)(res, null, "Logout successfully");
     }
