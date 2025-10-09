@@ -37,11 +37,11 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            // sameSite: "strict",
+            sameSite: "none",
             secure: true
         });
         res.cookie("autoReLog", true, {
-            // sameSite: "strict",
+            sameSite: "none",
             secure: true,
             expires: new Date(new Date().getTime() + (5 * 60 * 60 * 1000))
         });
