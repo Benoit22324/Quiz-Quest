@@ -27,11 +27,11 @@ export const authLogin = async (req: Request, res: Response) => {
 
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            sameSite: "none",
+            sameSite: "lax",
             secure: true
         })
         res.cookie("autoReLog", true, {
-            sameSite: "none",
+            sameSite: "lax",
             secure: true,
             expires: new Date(new Date().getTime() + (5*60*60*1000))
         })
@@ -71,12 +71,8 @@ export const authRegister = async (req: Request, res: Response) => {
 
 export const authLogout = async (req: Request, res: Response) => {
     try {
-        res.cookie("accessToken", false, {
-            expires: new Date(0)
-        });
-        res.cookie("autoReLog", false, {
-            expires: new Date(0)
-        });
+        res.clearCookie("accessToken");
+        res.clearCookie("autoReLog");
 
         return apiResponse(res, null, "Logout successfully");
     } catch(err: any) {

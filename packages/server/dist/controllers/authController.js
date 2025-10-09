@@ -37,11 +37,11 @@ const authLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            sameSite: "none",
+            sameSite: "lax",
             secure: true
         });
         res.cookie("autoReLog", true, {
-            sameSite: "none",
+            sameSite: "lax",
             secure: true,
             expires: new Date(new Date().getTime() + (5 * 60 * 60 * 1000))
         });
@@ -81,12 +81,8 @@ const authRegister = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.authRegister = authRegister;
 const authLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        res.cookie("accessToken", false, {
-            expires: new Date(0)
-        });
-        res.cookie("autoReLog", false, {
-            expires: new Date(0)
-        });
+        res.clearCookie("accessToken");
+        res.clearCookie("autoReLog");
         return (0, apiResponse_1.apiResponse)(res, null, "Logout successfully");
     }
     catch (err) {
