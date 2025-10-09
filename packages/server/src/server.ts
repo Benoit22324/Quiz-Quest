@@ -7,20 +7,8 @@ import router from "./router";
 const app = express();
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://quizquestfront-production.up.railway.app", "*"],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: [
-        "Content-Type",
-        "Authorization",
-        "X-Requested-With",
-        "Accept",
-        "Origin"
-    ],
-    credentials: true,
-    exposedHeaders: ["Set-Cookie"],
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-    maxAge: 86400
+    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://quizquestfront-production.up.railway.app"],
+    credentials: true
 }));
 app.use(cookieParser());
 app.use(express.json());
